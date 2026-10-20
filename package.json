@@ -1,0 +1,12 @@
+{
+  "name": "roku-screensaver-sites",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "test": "node --test",
+    "check:release": "node tools/build.mjs --release",
+    "sync:universe": "node tools/sync-universe.mjs"
+  },
+  "engines": {"node": ">=22"}
+}

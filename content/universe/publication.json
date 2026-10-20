@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "appName": "UNIVERSE",
+  "publisherName": "Tom Cocozzello",
+  "supportEmail": "thomas.cocozzello@gmail.com",
+  "supportPhone": null,
+  "siteBaseUrl": "https://razzo-lunare.github.io/roku-screensaver-sites/universe",
+  "effectiveDate": null,
+  "markets": [
+    "US",
+    "CA",
+    "GB",
+    "IE",
+    "AU",
+    "MX",
+    "BR",
+    "DE",
+    "AT",
+    "FR"
+  ],
+  "domesticRegion": null,
+  "hosting": {
+    "providerName": "GitHub Pages (GitHub, Inc.)",
+    "privacyUrl": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+    "operationalLogs": "GitHub Pages logs and stores visitors' IP addresses for security purposes, including signed-out visitors. GitHub controls its hosting/security processing and retention under its privacy statement; we do not promise a fixed deletion period for GitHub's logs."
+  },
+  "support": {
+    "providerName": null,
+    "privacyUrl": null,
+    "authorizedAccess": "Tom Cocozzello is the only person with access to the support inbox. The email service provider processes messages as described in its privacy information.",
+    "retention": "We retain support correspondence only as long as reasonably necessary to address requests and meet applicable legal obligations. We periodically review retained messages and delete or anonymize information no longer needed."
+  },
+  "listing": {
+    "monetization": null,
+    "madeForKids": null,
+    "category": null,
+    "ageRating": null
+  },
+  "reviews": {
+    "publisherFactsConfirmed": false,
+    "policiesApproved": false,
+    "namesReviewed": false,
+    "assetRightsReviewed": false,
+    "listingApproved": false,
+    "languageCoverageReviewed": false
+  },
+  "publicationAuthorization": null,
+  "brandingDecision": {
+    "direction": "Keep the proposed names",
+    "names": [
+      "UNIVERSE",
+      "UNIVERSO",
+      "UNIVERS",
+      "UNIVERSUM"
+    ],
+    "confirmedOn": "2026-10-19",
+    "status": "Owner-selected; trademark clearance review remains separate"
+  },
+  "website": {
+    "mode": "review",
+    "policyApproval": null,
+    "deploymentVerified": false,
+    "publicationAuthorization": "User instruction: Add these files to GitHub pages; website project handoff October 19, 2026."
+  }
+}
