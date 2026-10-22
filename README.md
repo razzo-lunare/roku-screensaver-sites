@@ -6,6 +6,13 @@ The private Roku application repository and runtime source are not included.
 
 ## Current status
 
+**Live on GitHub Pages, verified October 22, 2026:**
+https://razzo-lunare.github.io/roku-screensaver-sites/
+
+All six public HTML pages and the stylesheet return HTTP 200 and match the
+generated local files byte-for-byte. The Pages deployment succeeded. Hosting
+is verified; policy approval and Roku store readiness remain separate.
+
 The website is a **public review draft**, with no confirmed store availability.
 Privacy and terms are proposed, have no effective date, and are not approved
 final policies or certification evidence. They visibly say so on every page.
@@ -16,7 +23,8 @@ GitHub MCP verified `razzo-lunare/roku-screensaver-sites` is public, default bra
 inventory has no Pages configuration operation; its generic reader rejected
 `/repos/razzo-lunare/roku-screensaver-sites/pages` as unsupported. Repository
 admin rights do not add a missing MCP operation. No browser sign-in was used.
-See [HOSTING.md](HOSTING.md) for the minimal Pages setting and verification.
+The owner configured Pages, and deployment is now verified. See
+[HOSTING.md](HOSTING.md) for hosting configuration and verification evidence.
 
 ## Build and check
 

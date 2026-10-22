@@ -7,7 +7,7 @@ are uploaded through MCP; no GitHub CLI, SSH push or browser login is required
 for that upload. The available MCP tools cannot read or change Pages settings.
 The attempted Pages GET was rejected by the connector's endpoint allowlist.
 
-## One minimal human setting if Pages is not already enabled
+## Publishing source (configured by the owner)
 
 Open the repository **Settings → Pages → Build and deployment**. Set:
 
@@ -19,13 +19,13 @@ Open the repository **Settings → Pages → Build and deployment**. Set:
 Direct settings page:
 https://github.com/razzo-lunare/roku-screensaver-sites/settings/pages
 
-This is the only required hosting operation left to a repository administrator.
+The owner completed this setting; no hosting operation remains outstanding.
 No custom domain, paid hosting, app upload or license-picker selection is needed.
 Publish the existing review status; do not interpret this as final policy approval.
 GitHub documents branch/folder publishing here:
 https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
-## Expected URLs — not evidence of a live deployment
+## Live URLs — verified October 22, 2026
 
 - https://razzo-lunare.github.io/roku-screensaver-sites/
 - https://razzo-lunare.github.io/roku-screensaver-sites/universe/
@@ -35,7 +35,7 @@ https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a
 - https://razzo-lunare.github.io/roku-screensaver-sites/universe/credits.html
 
 The base URL follows the verified repository identity and GitHub's project URL
-convention. `deploymentVerified` stays false until live verification.
+convention. `deploymentVerified` is true based on the checks recorded below.
 Check the Pages deployment action and open every URL without authentication.
 Confirm HTTP 200, correct content, public review banner, complete credits,
 working navigation and narrow/wide layout. A 404 means hosting is not verified;
@@ -70,3 +70,23 @@ https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-s
 - The current local folder began with unborn `main`. MCP upload changes GitHub
   directly; it does not update this folder's local Git object database or refs.
   Local files match the uploaded content; local Git history is not synchronized.
+
+## Live verification — October 22, 2026
+
+The owner updated Pages settings. GitHub MCP confirms the successful
+[Pages build and deployment](https://github.com/razzo-lunare/roku-screensaver-sites/actions/runs/39851030490)
+for commit `27ccb5f2224ab910e940d3cd3239bf9e3af9b1b3`.
+
+All six HTML URLs listed above and `style.css` return HTTPS HTTP 200. Each
+response matches its generated local file byte-for-byte. This also verifies
+the full credits and provenance, public review banner, contact email and
+relative navigation content are preserved in the deployment. The live home
+and UNIVERSE overview were inspected in an unauthenticated browser; the
+stylesheet and decorative illustration render correctly at desktop width.
+Narrow-screen visual inspection remains unverified.
+
+The October 19 hosting blocker is resolved. The site is publicly hosted as a
+review draft; it is not final policy approval, trademark/asset clearance,
+localized policy completion, or Roku certification evidence. Support email
+provider confirmation, policy effective date and final policy approval remain
+outstanding. No store availability or unrelated store fields were changed.

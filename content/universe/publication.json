@@ -59,7 +59,9 @@
   "website": {
     "mode": "review",
     "policyApproval": null,
-    "deploymentVerified": false,
-    "publicationAuthorization": "User instruction: Add these files to GitHub pages; website project handoff October 19, 2026."
+    "deploymentVerified": true,
+    "publicationAuthorization": "User instruction: Add these files to GitHub pages; website project handoff October 19, 2026.",
+    "deploymentVerifiedOn": "2026-10-22",
+    "deploymentEvidence": "https://github.com/razzo-lunare/roku-screensaver-sites/actions/runs/39851030490"
   }
 }
