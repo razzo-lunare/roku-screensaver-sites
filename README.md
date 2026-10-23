@@ -1,7 +1,7 @@
 # Independent Roku screensaver websites
 
 Public website-only repository for Tom Cocozzello's standalone screensavers.
-UNIVERSE is the first section; additional products receive separate paths.
+UNIVERSE and the EARTH design preview have separate product paths.
 The private Roku application repository and runtime source are not included.
 
 ## Current status
@@ -49,8 +49,9 @@ For local preview: `python3 -m http.server 8080 --directory docs`, then visit
 
 - `content/universe/site/*.html`: canonical English page fragments, adapted from
   the app publication drafts. Make future website content changes here.
-- `content/style.css`: canonical shared design; decorative CSS illustration is
-  clearly labeled and is not represented as an app screenshot.
+- `content/style.css`: canonical shared design.
+- `content/assets/`: UNIVERSE and EARTH cover artwork, and EARTH native Roku preview.
+- `content/earth/`: EARTH overview, image notices and source provenance.
 - `content/universe/publication.json`: public publisher facts and review state.
   Original store fields remain unresolved; they do not gate website generation.
 - `content/universe/credits.json`: complete unwrapped app notices and map
@@ -85,10 +86,12 @@ No app files are changed by the sync command.
 Only these paths belong in this public Git repository:
 
 `README.md`, `HOSTING.md`, `RIGHTS.md`, `.gitignore`, `package.json`,
-`content/style.css`, `content/universe/publication.json`,
+`content/style.css`, `content/assets/{universe-store-cover.png,earth-cover.png,earth-preview.jpg}`,
+`content/earth/{image-notices.txt,asset-provenance.json,site/index.html}`,
+`content/universe/publication.json`,
 `content/universe/credits.json`, `content/universe/site/*.html`,
 `tools/{build,sync-universe}.mjs`, `tests/site.test.mjs`, and generated
-`docs/{index.html,style.css,.nojekyll,universe/*.html}`.
+`docs/{index.html,style.css,.nojekyll,universe/*.html,earth/index.html,earth/asset-provenance.json,assets/universe-store-cover.png,assets/earth-cover.png,assets/earth-preview.jpg}`.
 
 **Only `docs/` is the Pages publishing source.** Never upload the private app
 repository, runtime `.brs` or component files, local config, credentials,
@@ -111,3 +114,18 @@ in `website.policyApproval`, set only genuinely completed review flags, choose
 `website.mode: final`, run `check:release`, build and test, then republish and
 verify all public URLs. Publication authorization for website review does not
 approve policies, legal clearance or Roku submission.
+
+## Product imagery
+
+UNIVERSE uses the app's checked-in `cover-fhd.png` store cover artwork, an
+AI-generated illustration, not a runtime screenshot or evidence of store publication.
+EARTH uses the app owner's native Roku `stars-after.jpg` milestone capture;
+its screenshot caption and overview identify the sample astronomy and location.
+Only these reviewed product images are exported; no household/device information
+or private runtime implementation is included. EARTH image notices and provenance
+are copied from the app project and shown alongside the preview. Refresh these
+with future imagery changes. EARTH has no store/download link or release claim.
+
+EARTH collection cover: original OpenAI-generated promotional artwork, handed
+off by the Earth artwork thread from `design/earth/artwork/earth-cover-v1.png`.
+It is labeled as artwork; the separate overview screenshot shows current behavior.

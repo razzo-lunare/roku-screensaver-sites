@@ -12,3 +12,12 @@ Nothing here labels all third-party content proprietary or limits independent
 public-domain, CC0, MIT or other permissions. Complete app notices and source
 provenance are preserved in content/universe/credits.json and rendered publicly
 at docs/universe/credits.html. Inclusion is attribution, not endorsement.
+
+EARTH preview imagery retains the individual source terms recorded in
+content/earth/image-notices.txt and content/earth/asset-provenance.json, rendered
+at docs/earth/index.html. The screenshot as a whole is not designated CC0 or
+public domain. UNIVERSE's store cover is AI-generated illustrative artwork;
+it is not a screenshot. No additional first-party license is granted here.
+
+EARTH promotional cover is AI-generated illustrative artwork, separate from
+the native screenshot and its NASA source imagery.

@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "generator": "tools/earth/render-assets.py",
+  "sources": {
+    "day": {
+      "url": "https://maps.jpl.nasa.gov/tmaps/pix/ear0xuu2.jpg",
+      "sha256": "15888f83a67d5e3deb2601c5fa41a689790f30e8e3533222a4f6e3700f016780",
+      "credit": "Courtesy NASA/JPL-Caltech. Creator and owner: Caltech/JPL/USGS.",
+      "policy": "https://www.jpl.nasa.gov/jpl-image-use-policy/"
+    },
+    "moon": {
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg",
+      "sha256": "f7130a1822681fa7512d7dcfd40db8c10b9ba4f06777910348698260ed7a2170",
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "credit": "NASA's Scientific Visualization Studio. CGI Moon Kit, 2025 color map. Ernie Wright (USRA); LRO/LROC and LOLA instrument teams; LROC mosaic collected by Arizona State University.",
+      "catalogue": "https://svs.gsfc.nasa.gov/4720/",
+      "policy": "https://svs.gsfc.nasa.gov/help/#frequently-asked-questions",
+      "license": "Public domain under NASA SVS reproduction guidance; no third-party restriction noted on this item.",
+      "projection": "Equirectangular, 0 degrees longitude at image center; north up. Displayed near side centered at 0 degrees longitude/latitude.",
+      "limitations": "Photographic WAC mosaic, exposure/white-balance adjusted for human vision; high-latitude gaps filled with LOLA albedo and small dropouts inpainted. Optimized for aesthetics, not scientific analysis. No current-phase, libration or topographic-shadow claim."
+    },
+    "night": {
+      "url": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/144000/144898/BlackMarble_2016_3km.jpg",
+      "sha256": "230aac448ae68c358be433dd518888cccb3a85ccf66f7b44326441c324ad6725",
+      "credit": "NASA Earth Observatory / Black Marble 2016, Suomi NPP VIIRS. NASA Earth Observatory images by Joshua Stevens, using Suomi NPP VIIRS data from Miguel Roman, NASA GSFC.",
+      "catalogue": "https://science.nasa.gov/earth/earth-observatory/earth-at-night/maps/",
+      "policy": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  },
+  "assets": {
+    "earth.png": {
+      "sha256": "50ed72d3858cd9bb345f855ae394027dcfefe17a3dcac67007a1215d1c356eb4",
+      "dimensions": [
+        1000,
+        1000
+      ]
+    },
+    "iss.png": {
+      "sha256": "6750b210d5efca0e002babd2da7573204d98b576e7504d315e1ed6137ab2b180",
+      "dimensions": [
+        96,
+        56
+      ]
+    },
+    "moon.png": {
+      "sha256": "ca3830876fac05b08d3c20b96bcba47b301bf4177b373c4f3eca18c8f2edf1ed",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "orbit-back.png": {
+      "sha256": "4eeb91f822f3ae38dec674d74e8fe195120f10a68f268d016c3fd165fa19052b",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    "orbit-front.png": {
+      "sha256": "741ed122aa6899c71d821c1c63986b24df6c43fd6a541524ccd12209f0f8e989",
+      "dimensions": [
+        1440,
+        900
+      ]
+    }
+  },
+  "sampleLocation": {
+    "latitudeDegrees": 25,
+    "longitudeDegrees": -95
+  },
+  "limitations": [
+    "Fixed sample camera and solar direction, not user location or current lighting.",
+    "2016 night-light composite and historic daytime mosaic, not live observations.",
+    "Photo-based Moon albedo with illustrative fixed phase; date-correct phase not implemented.",
+    "Schematic enlarged ISS and compressed 180-second orbit; no live orbital data."
+  ]
+}

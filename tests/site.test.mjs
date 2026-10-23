@@ -8,16 +8,17 @@ execFileSync(process.execPath,['tools/build.mjs'],{cwd:root});
 test('only static pages and stylesheet enter the Pages webroot; all local links resolve',async()=>{
  const files=async p=>(await Promise.all((await readdir(p,{withFileTypes:true})).map(async d=>d.isDirectory()?files(join(p,d.name)):[join(p,d.name)]))).flat();
  const paths=await files(join(root,'docs'));
- assert.equal(paths.length,8);
+ assert.equal(paths.length,13);
+ const assets=['assets/earth-cover.png','assets/universe-store-cover.png','assets/earth-preview.jpg','earth/asset-provenance.json'];
  for(const p of paths){
-  assert.match(p,/\.(?:html|css)$|\.nojekyll$/);
+  assert.ok(/\.(?:html|css)$|\.nojekyll$/.test(p)||assets.some(a=>p===join(root,'docs',a)));
   if(!p.endsWith('.html'))continue;
   const html=await readFile(p,'utf8');
   assert.match(html,/Public review draft/);
   assert.match(html,/noindex,nofollow/);
   assert.doesNotMatch(html,/<script\b|<form\b|<iframe\b|\{\{\w+\}\}|TO CONFIRM|not published|\/Users\//i);
   assert.equal((html.match(/<h1\b/g)||[]).length,1);
-  for(const [,href]of html.matchAll(/href="([^"]+)"/g)){
+  for(const [,href]of html.matchAll(/(?:href|src)="([^"]+)"/g)){
    if(/^(https:|mailto:|#)/.test(href))continue;
    const local=resolve(p,'..',href);
    assert.ok(local.startsWith(join(root,'docs')+'/'));
@@ -43,4 +44,14 @@ test('final website gate fails without claiming phone or store fields are requir
   assert.doesNotMatch(error,/supportPhone|domesticRegion|monetization|ageRating|madeForKids/);
   return true;
  });
+});
+
+test('collection uses canonical artwork and accurately labels Earth preview',async()=>{
+ const home=await readFile(join(root,'docs/index.html'),'utf8');
+ const earth=await readFile(join(root,'docs/earth/index.html'),'utf8');
+ assert.match(home,/THE COLLECTION \/ 02/);
+ assert.match(home,/assets\/universe-store-cover.png/);
+ assert.match(earth,/live ISS tracking are not implemented/);
+ assert.match(earth,/Full image notices/);
+ for(const name of ['earth-preview.jpg','earth-cover.png','universe-store-cover.png'])assert.deepEqual(await readFile(join(root,'docs/assets',name)),await readFile(join(root,'content/assets',name)));
 });
