@@ -90,3 +90,16 @@ review draft; it is not final policy approval, trademark/asset clearance,
 localized policy completion, or Roku certification evidence. Support email
 provider confirmation, policy effective date and final policy approval remain
 outstanding. No store availability or unrelated store fields were changed.
+
+## EARTH policy/content update — October 24, 2026
+
+The generated webroot now includes product-specific EARTH policy/support pages:
+
+- https://razzo-lunare.github.io/roku-screensaver-sites/earth/
+- https://razzo-lunare.github.io/roku-screensaver-sites/earth/privacy.html
+- https://razzo-lunare.github.io/roku-screensaver-sites/earth/terms.html
+- https://razzo-lunare.github.io/roku-screensaver-sites/earth/support.html
+
+Normal push to the existing main/docs source publishes these pages. Verify the
+Pages action for the pushed commit and HTTP200/content at all four URLs; source
+commit success alone is not live deployment proof. Review status is unchanged.

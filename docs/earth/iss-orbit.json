@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "satellite": 25544,
+  "source": "https://celestrak.org/NORAD/elements/gp.php?CATNR=25544&FORMAT=TLE",
+  "tle": [
+    "ISS (ZARYA)             \r",
+    "1 25544U 98067A   26296.69304404  .00008515  00000+0  16237-3 0  9995\r",
+    "2 25544  51.6336  24.1765 0006871 300.7285  59.3026 15.49021515591674"
+  ],
+  "sha256": "8ca9c6aadc7493e7b568384e057ce91a7eda791478d8b02a120aa398bbea4d71",
+  "epochUtc": "2026-10-23T16:37:59.005Z",
+  "model": "SGP4 near-Earth, WGS72; satellite.js 7.1.0 initialization",
+  "frame": "TEME km converted to Earth-fixed with GMST; UTC approximates UT1",
+  "predictionWindowDays": 7,
+  "accuracy": "Approximate prediction; no maneuvers or later drag changes. Window is an application policy, not an accuracy guarantee.",
+  "dataRights": {
+    "reviewedOn": "2026-10-23",
+    "scope": "One public standard GP/TLE record for ISS 25544 and locally calculated SGP4 derivatives; not SupGP, CDMs, private operator data or CelesTrak publications/software",
+    "attribution": "Orbital elements: USSPACECOM / 18th Space Defense Squadron, via Space-Track.org and CelesTrak (Dr. T.S. Kelso). Predictions calculated locally by EARTH using satellite.js-derived SGP4; no endorsement or operational accuracy is implied.",
+    "basis": "Space-Track's Redistribution of Basic SSA Information section grants blanket transfer/redistribution approval for basic SSA data subject to appropriate citation, including analysis. It explicitly includes TLEs/OMMs. CelesTrak's standard GP documentation identifies 18 SPCS/Space-Track as its upstream. This review applies that approval to the standard ISS GP record obtained through CelesTrak and preserves both upstream and intermediary attribution. It is not a new CC0/MIT license for the data.",
+    "references": [
+      "https://www.space-track.org/documentation",
+      "https://celestrak.org/NORAD/documentation/gp-data-formats.php",
+      "https://celestrak.org/usage-policy.php"
+    ]
+  }
+}

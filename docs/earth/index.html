@@ -1,28 +1,29 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Independent Roku screensavers by Tom Cocozzello. UNIVERSE and EARTH information, support, sources and policy review."><title>EARTH · Tom Cocozzello</title><link rel="stylesheet" href="../style.css"></head><body><a class="skip" href="#content">Skip to content</a><header><div class="wrap masthead"><a class="brand" href="../index.html">TC <span>/ SCREENSAVERS</span></a><nav aria-label="EARTH navigation"><a href="index.html">Overview</a><a href="#sources">Image sources</a><a href="#support">Support</a></nav></div></header><main id="content" class="wrap"><aside class="draft"><strong>Public review draft</strong><p>This website is prepared for public publisher review. Privacy and terms are proposed, have no effective date, and are not approved final policies or Roku certification evidence. App store availability is not confirmed. Pages and legal notices are currently English only.</p></aside><p class="eyebrow">In development · Standalone Roku screensaver</p>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Independent Roku screensavers by Tom Cocozzello. UNIVERSE and EARTH information, support, sources and policy review."><title>EARTH · Tom Cocozzello</title><link rel="stylesheet" href="../style.css"></head><body><a class="skip" href="#content">Skip to content</a><header><div class="wrap masthead"><a class="brand" href="../index.html">TC <span>/ SCREENSAVERS</span></a><nav aria-label="EARTH navigation"><a href="index.html" aria-current="page">Overview</a><a href="support.html">Support</a><a href="privacy.html">Privacy notice</a><a href="terms.html">Terms of use</a><a href="index.html#sources">Sources &amp; licenses</a></nav></div></header><main id="content" class="wrap"><aside class="draft"><strong>Public review draft</strong><p>This website is prepared for public publisher review. Privacy and terms are proposed, have no effective date, and are not approved final policies or Roku certification evidence. App store availability is not confirmed. Pages and legal notices are currently English only.</p></aside><p class="eyebrow">In development · Standalone Roku screensaver</p>
 <h1>EARTH</h1>
-<p class="lead">Our home planet, after dark.</p>
-<figure class="product-image overview-image"><img src="../assets/earth-preview.jpg" width="1920" height="1080" alt="Earth with night-side city lights, a photographic Moon and an illustrated ISS orbit"><figcaption>EARTH design preview on Roku. Location, lighting, Moon phase and ISS orbit are illustrative.</figcaption></figure>
-<p>A quiet view of Earth with night-side city lights, a photographic Moon, gently twinkling stars and an illustrated ISS orbit.</p>
-<div class="card"><h2>A design preview in development</h2><p>The preview uses a sample location, lighting, Moon phase and ISS orbit. Personalized orientation, date-correct lighting and lunar phase, and live ISS tracking are not implemented. Earth and city-light maps are historical imagery, not live observations. Store availability is not confirmed.</p></div>
+<p class="lead">Our home planet, in changing light.</p>
+<figure class="product-image overview-image"><img src="../assets/earth-preview.jpg" width="1920" height="1080" alt="EARTH running on Roku with sunlight over the Pacific, night-side city lights, the Moon and ISS on its orbit guide"><figcaption>EARTH 0.1.22 running on Roku, October 23, 2026. Historical maps with calculated sunlight, date-based lunar phase and an offline ISS prediction. The camera is a fixed sample view.</figcaption></figure>
+<p>A quiet view of Earth with shifting sunlight, warm city lights, the Moon's changing phase, subtle stars and your local time and date.</p>
+<div class="card"><h2>Calculated sunlight and offline ISS tracking</h2><p>Earth's day/night boundary follows the device's UTC clock and refreshes each minute. The Moon's phase follows the date; its illuminated limb faces the same projected Sun direction as Earth.</p><p>ISS positions are calculated on the Roku using SGP4 and bundled, dated CelesTrak orbital elements. Playback makes no network requests. The station and guide hide outside seven days of the element date, and new elements require an updated app build. Maneuvers and changes in drag can make predictions less accurate before that limit; the window is not an accuracy guarantee. These are predictions, not spacecraft telemetry.</p></div>
 <h2>A scene for an idle television</h2>
-<p>The preview runs with bundled artwork and makes no runtime network requests or location collection. Star twinkle and Reduced motion settings, plus Credits &amp; Licenses, are implemented. Use the Roku remote to dismiss the screensaver.</p>
-<section id="support"><h2>Questions about EARTH</h2><p>Email <a href="mailto:thomas.cocozzello@gmail.com">thomas.cocozzello@gmail.com</a> with EARTH in the subject. Include your Roku model and a description of the issue; avoid sending passwords or precise location details.</p><p class="meta">EARTH is in development. The linked UNIVERSE policy drafts describe UNIVERSE; EARTH-specific release policies will be prepared before release.</p></section>
-<section id="sources"><h2>Images and sources</h2><p>Earth imagery: NASA/JPL-Caltech/USGS. City lights: NASA Earth Observatory, Black Marble 2016. Moon texture: NASA SVS, CGI Moon Kit 2025 (LRO). ISS artwork and orbital guides: original procedural artwork. Inclusion does not imply endorsement.</p><details><summary>Full image notices and reuse terms</summary><pre>EARTH design-preview assets
+<p>Choose star twinkle, reduced motion, the ISS orbit line and Real time or 2x, 5x and 10x ISS previews in the separate screensaver settings. Faster previews affect only the ISS, not Earth lighting, Moon phase or the clock. Reduced motion freezes the station. Use the Roku remote to dismiss playback.</p>
+<p>The view stays centered on a fixed sample camera at 25° N, 95° W; no user location is collected. Globe maps and city lights are historical imagery, not live weather or electricity data. The Moon is an illustrative inset with approximate lighting, and the ISS is enlarged for readability. Store availability is not confirmed.</p>
+<section id="support"><h2>Questions about EARTH</h2><p><a href="support.html">EARTH support</a> · <a href="privacy.html">EARTH privacy notice</a> · <a href="terms.html">EARTH terms of use</a></p><p>Email <a href="mailto:thomas.cocozzello@gmail.com">thomas.cocozzello@gmail.com</a> with EARTH in the subject. Avoid sending passwords, signing keys or private account information.</p></section>
+<section id="sources"><h2>Images, astronomy and licenses</h2><p>Earth: NASA Goddard Blue Marble 2002 cloud-free imagery. City lights: NASA Earth Observatory, Black Marble 2016. Moon: NASA SVS CGI Moon Kit 2025 (LRO). ISS artwork: a NASA/JSC IGOAL rendering with AI-assisted background removal, not a validated spacecraft model. Stars and guide strokes are original procedural artwork. Inclusion does not imply endorsement.</p><p>Solar lighting uses USNO approximate coordinates and sidereal time. Lunar phase uses a low-order Sun/Moon model. Offline ISS propagation adapts satellite.js 7.1.0 (MIT); source elements, their epoch and limitations are in the <a href="iss-orbit.json">bundled orbit record</a>.</p><details><summary>Full image notices and reuse terms</summary><pre>EARTH design-preview assets
 
-Reuse notices: JPL images may be reused under the linked JPL image-use policy,
-subject to its exceptions, credit requirement and no-endorsement condition.
-NASA-created imagery is generally not subject to US copyright; NASA&#39;s media
+Reuse notices: NASA-created imagery is generally not subject to US copyright; NASA&#39;s media
 guidelines retain restrictions for logos, endorsement, people and third-party
 material. The SVS Moon item is public domain under the guidance linked below.
 These descriptions do not replace the source-specific terms at those links.
 The procedural artwork has its separate CC0 dedication below.
 
-earth.png: deterministic orthographic projection and illustrative day/night
-blend of two historical map products, not current Earth imagery or lighting.
-Day: Courtesy NASA/JPL-Caltech. Creator and owner: Caltech/JPL/USGS.
-https://maps.jpl.nasa.gov/tmaps/earth.html
-https://www.jpl.nasa.gov/jpl-image-use-policy/
+earth-day.png and earth-night.png: deterministic orthographic projections of
+two historical map products, not current Earth observations.
+Day: NASA Goddard Space Flight Center, Blue Marble 2002.
+Reto Stöckli (land, shallow water); Robert Simmon (ocean color, compositing).
+MODIS science teams; USGS EROS and USGS Flagstaff (topography/Antarctica).
+https://science.nasa.gov/earth/earth-observatory/the-blue-marble-true-color-global-imagery-at-1km-resolution/
+https://www.nasa.gov/nasa-brand-center/images-and-media/
 Night: NASA Earth Observatory, Black Marble 2016; Suomi NPP VIIRS.
 NASA Earth Observatory images by Joshua Stevens, using Suomi NPP VIIRS data
 from Miguel Roman, NASA Goddard Space Flight Center.
@@ -40,19 +41,229 @@ reproduction guidance; this item has no noted third-party restriction.
 https://svs.gsfc.nasa.gov/4720/
 https://svs.gsfc.nasa.gov/help/#frequently-asked-questions
 NASA&#39;s mosaic is color/exposure adjusted for appearance, with some inpainted
-gaps; it is not a scientific-analysis product. Our phase lighting is illustrative,
-not date-correct; no simulated libration or topographic shadows are claimed.
+gaps; it is not a scientific-analysis product. Runtime phase lighting follows
+the device UTC date using a low-order Sun/Moon longitude approximation.
+120 original procedural black-alpha masks (images/moon-phase/*.png) quantize
+elongation to 3 degrees. They are CC0 1.0 artwork under the dedication below.
+The photographic near-side surface stays fixed. Since 0.1.21 the phase mask
+rotates to align its lit limb with the Earth-camera Sun direction; the dated
+geocentric phase fraction is preserved. This is an illustrative inset, not
+common 3D Earth/Moon geometry or a local sky view. No local horizon tilt,
+libration or topographic shadows are simulated.
+Astronomy formula reference: Paul Schlyter, Computing planetary positions,
+https://stjarnhimlen.se/comp/ppcomp.html (mean elements and dominant terms).
+Original project implementation; no third-party source code is bundled.
 Source URL/hash, map convention and limitations are in data/asset-provenance.json.
 
-iss.png, data/stars.json, orbit-front.png and orbit-back.png are original
-procedural illustrative artwork generated by tools/earth/render-assets.py.
-Star positions and ISS appearance/orbit are schematic. Stars are now native
-Rectangle nodes, with subtle independent group opacity animations.
+iss.png: NASA-based ISS illustration, replacing the original procedural icon.
+Source rendering: NASA/JSC/Integrated Graphics, Operations, and Analysis
+Laboratory (IGOAL), International Space Station (ISS) (D) (IGOAL):
+https://science.nasa.gov/3d-resources/international-space-station-iss-d-igoal/
+Reuse policy: https://www.nasa.gov/nasa-brand-center/images-and-media/
+No third-party restriction was noted on this source item. NASA source material
+is used factually without endorsement; source credit does not imply NASA
+review or validation of the edited output. OpenAI image editing removed the
+white background on October 23, 2026. This is an AI-edited derivative; small
+details may differ from the source rendering. Uniform downsampling and centering
+are performed by tools/earth/iss_art.py. Source and edited master hashes are in
+data/asset-provenance.json. No new first-party license grant is made here; the
+CC0 dedication below does not apply to this NASA-derived image.
+The configuration, surface lighting and viewing angle are fixed illustrative
+choices, not current spacecraft attitude or configuration. The station remains
+enlarged for readability; offline position/eclipse predictions are calculated separately; see Copyright &amp; about EARTH.
+
+data/stars.json, orbit-front.png, orbit-back.png and orbit-stroke.png are original procedural
+illustrative artwork generated by tools/earth/render-assets.py. Star positions
+and historical baked orbital guides are schematic. Stars are native Rectangle
+nodes, with subtle independent group opacity animations.
 To the extent possible under law, contributors waive copyright and related
 rights to this original procedural artwork under CC0 1.0 Universal:
 https://creativecommons.org/publicdomain/zero/1.0/
 Roku supplies system fonts; no external fonts are bundled.
 
 The AI-generated design reference remains outside the runtime source and ZIP.
+
+Current Earth lighting (0.1.8): earth-day.png (1000x1000) and earth-night.png
+(1000x1000 since 0.1.14) are separate orthographic derivatives of the same reviewed daytime
+and Black Marble maps credited above. Version 0.1.14 replaces the low-resolution daytime map with the 8192x4096
+Blue Marble 2002 map. Version 0.1.17 uses its cloud-free Land Surface, Ocean
+Color, and Sea Ice product (8192x4096 PNG), replacing the cloudy TIFF.
+Land observations are June–September 2001; this is not current weather. Night imagery remains Black Marble 2016.
+Runtime night alpha is original procedural rendering using USNO approximate
+solar coordinates and Greenwich mean sidereal time:
+https://aa.usno.navy.mil/faq/sun_approx
+https://aa.usno.navy.mil/faq/GAST
+The implementation uses UTC as an approximation to UT1, not TDB, and omits
+Earth-orientation corrections, refraction and physical twilight scattering.
+The 25 N / 95 W sample camera stays fixed; no user location is inferred.
+City-light imagery remains the 2016 historical composite, not live electricity
+or weather data. Lighting refreshes once per UTC minute independently of ISS
+preview speed. The unused baked-light prototype is host-only since 0.1.14.
+Version 0.1.9 uses a dim neutral
+earth-day.png on startup, without a baked solar boundary. data/earth-lighting-header.txt is an original blank
+BMPV4 format header generated by tools/earth/render-assets.py; CC0 dedication
+above applies to the header and original procedural overlay pixels, without
+changing the source-map rights. ISS runtime positions now use bundled SGP4 orbital elements and locally
+calculated eclipse visibility as described in Copyright &amp; about EARTH; the earlier
+fixed-Sun orbit description above records only the original prototype artwork.
+
+cover-fhd.jpg and cover-hd.jpg: original OpenAI-generated promotional artwork
+created October 22, 2026 for EARTH, also used by the site project. Source:
+design/earth/artwork/earth-cover-v1.png (outside the runtime artifact).
+Illustrative artwork, not NASA photography, live imagery or validated astronomy.
+No additional first-party license is granted here.
+
+Version 0.1.20 prefilters iss.png to its 96x56 display size using Lanczos on the
+host; this supersedes runtime reduction of the 384x224 texture. No new image
+editing or spacecraft geometry change is involved. orbit-stroke.png is an
+original 8x8 symmetric alpha profile generated by tools/earth/iss_art.py, used
+for soft-edged line segments; the original procedural artwork CC0 notice applies.
+</pre></details><details><summary>EARTH notices and astronomy limitations</summary><pre>EARTH copyright and notices
+
+Original EARTH project code: Copyright (c) 2026 its respective copyright holders.
+This notice identifies the original project material and does not make a new
+license grant or claim ownership of public-domain or third-party content.
+The standalone lifecycle helper is project-authored code shared at build time.
+Third-party software, data and artwork retain their own notices and terms.
+No trademark, endorsement or ownership rights in NASA, JPL, Caltech, USGS,
+Arizona State University or Roku material are claimed.
+
+Images &amp; artwork contains the full bundled image notices, including:
+NASA Goddard Blue Marble 2002 cloud-free daytime Earth mosaic; NASA Earth Observatory Black Marble
+2016 city-light map; NASA SVS CGI Moon Kit 2025 LRO photographic lunar texture;
+NASA/JSC IGOAL-based ISS illustration with OpenAI background extraction;
+and original procedural star positions and orbital guides (CC0).
+Source URLs, copyright credits, reuse-policy links and processing limits are
+included there. NASA imagery does not imply NASA endorsement.
+
+Software license contains the complete RokuCommunity MIT license, including
+copyright, permission, conditions and warranty/liability disclaimer, for the
+BrighterScript runtime helper bundled by the build tool. It also contains the
+satellite.js MIT license for the adapted local SGP4 propagator. Host-only development
+tools and the AI-generated concept reference are not included in this app.
+Roku supplies system fonts; no external font files are bundled.
+
+This is a design preview. The camera remains a fixed illustrative sample, not the user&#39;s location. Earth sunlight follows the actual device UTC clock. Lunar phase follows the actual device UTC clock, recalculated
+on startup and every minute; it does not use accelerated ISS preview time. The Moon&#39;s actual photographic surface map is not a claim
+of live lunar observations, libration or topographic shadows. Phase lighting
+uses approximate Sun/Moon longitudes and 3-degree shading steps. The phase mask is oriented toward the same projected Sun direction used by
+Earth lighting, using the same UTC update. Lunar surface geography stays fixed.
+The Moon remains an illustrative inset with geocentric phase, not its physical
+position in a common 3D scene or an observer-horizon view. Historical Earth and
+city-light imagery is not live weather or electricity data. No user location
+is collected or sent; preferences are stored locally on the Roku.
+
+The bottom-left clock shows actual local device date/time and follows Roku&#39;s
+12/24-hour setting. Moon phase and the clock do not use accelerated ISS time.
+
+Offline ISS positions: local near-Earth SGP4 (WGS72), initialized on the host
+using satellite.js 7.1.0 (MIT) and bundled CelesTrak general perturbations data.
+Elements epoch: 2026-10-23T16:37:59.005Z. Full source elements and provenance:
+pkg:/data/iss-orbit.json. CelesTrak source:
+https://celestrak.org/NORAD/elements/gp.php?CATNR=25544&amp;FORMAT=TLE
+Orbital elements: USSPACECOM / 18th Space Defense Squadron, via Space-Track.org
+and CelesTrak (Dr. T.S. Kelso). Predictions are calculated locally by EARTH;
+the source agencies and CelesTrak do not endorse or validate this app.
+Space-Track&#39;s Redistribution of Basic SSA Information permits redistribution
+of basic TLE/OMM data and analysis with appropriate citation:
+https://www.space-track.org/documentation
+This basis applies to the bundled standard public ISS GP elements, not private
+operator data, SupGP, conjunction messages or a general CelesTrak license.
+Data-rights review: October 23, 2026. Full scoped basis and source references
+are in data/iss-orbit.json; data rights are separate from software MIT terms.
+Model: Vallado et al., Revisiting Spacetrack Report #3 (2006).
+https://celestrak.org/publications/AIAA/2006-6753/AIAA-2006-6753-Rev1.pdf
+The Software license category includes the complete satellite.js MIT notice.
+These are approximate orbital predictions, not spacecraft telemetry. Source
+elements age; later maneuvers and changes in atmospheric drag are unknown.
+The ISS and guide hide outside seven days before/after the element epoch.
+That window is an application freshness policy, not an accuracy guarantee.
+Updating the orbit requires a new app build containing updated elements.
+TEME kilometres are converted to Earth-fixed using Greenwich mean sidereal
+time; UTC approximates UT1, with no polar motion/EOP corrections or TDB claim.
+
+Real time is the default ISS speed and starts at the current calculated position
+using device UTC. The saved speed slider also offers 2x, 5x and 10x previews of
+predicted future positions. Every activation starts again at the current time;
+faster previews reset to current time after advancing six hours ahead. Reduced
+motion freezes the station display. The icon is enlarged; the full orbit guide
+is an approximate instantaneous orbital plane, not an exact future ground track.
+The camera still matches the fixed sample Earth view, not the user&#39;s location.
+Eclipse darkening uses an approximate cylindrical Earth shadow and the same
+calculated Sun direction as the globe, at the ISS prediction epoch; the icon&#39;s
+surface shading remains illustrative, not actual spacecraft attitude. The ISS
+artwork is an AI-edited derivative of a NASA/JSC IGOAL model rendering, not an
+unaltered NASA image. Small details may differ from the source; current model
+configuration and exact structural accuracy are not independently validated. Earth
+lighting and lunar phase have independent implementations and accuracy limits.
+The orbit guide can be hidden independently in settings.
+
+EARTH playback makes no network requests. Orbital data, images and software
+are bundled with the app. No external service receives playback timestamps,
+preferences, location or device identifiers from EARTH. There is no project
+backend, account, key or paid service. The developer&#39;s optional host-side orbit
+refresh downloads elements from CelesTrak before building; the Roku never does.
+Only complete local prediction batches are used; interpolation stops at their
+boundaries. An expired or failed prediction hides the ISS and guide while the
+rest of the screensaver continues. An ISS behind Earth is naturally hidden.
+Predictions remain in activation memory; there are no response downloads/cache.
+
+Earth&#39;s day/night boundary recalculates at startup and once per UTC minute
+using USNO approximate solar coordinates and Greenwich mean sidereal time:
+https://aa.usno.navy.mil/faq/sun_approx
+https://aa.usno.navy.mil/faq/GAST
+UTC approximates UT1; this is not TDB ephemeris data. No polar motion, EOP,
+atmospheric refraction or physical twilight-scattering accuracy is claimed.
+The night-side city lights are a historical 2016 composite. The view remains
+fixed at the sample camera (25 N, 95 W), not a detected user location. ISS
+preview speed does not accelerate Earth lighting. A dim neutral globe without a solar boundary
+remains during startup or if initial dynamic lighting fails; the prior usable frame
+is retained after a later failure. Solar calculations work offline.
+
+Menu covers: original OpenAI-generated EARTH promotional illustration, created
+October 22, 2026 and also used by the EARTH website. Not NASA photography,
+a runtime screenshot, live imagery or validated astronomy.
+</pre></details><details><summary>SGP4 software license</summary><pre>MIT License
+
+Copyright (C) 2013 Shashwat Kandadai, UCSC Jack Baskin School of Engineering
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</pre></details><details><summary>Bundled runtime helper license</summary><pre>MIT License
+
+Copyright (c) 2021 RokuCommunity
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 </pre></details><p><a href="asset-provenance.json">Image source and provenance record</a></p></section>
-</main><footer class="wrap"><p>Independent screensavers by Tom Cocozzello · <a href="mailto:thomas.cocozzello@gmail.com">thomas.cocozzello@gmail.com</a></p><p><a href="../universe/privacy.html">UNIVERSE privacy review</a> · <a href="../universe/terms.html">UNIVERSE terms review</a> · <a href="../universe/credits.html">UNIVERSE sources &amp; licenses</a></p><p class="meta">Not affiliated with or endorsed by Roku or the source institutions. English website.</p></footer></body></html>
+</main><footer class="wrap"><p>Independent screensavers by Tom Cocozzello · <a href="mailto:thomas.cocozzello@gmail.com">thomas.cocozzello@gmail.com</a></p><p><a href="privacy.html">EARTH privacy review</a> · <a href="terms.html">EARTH terms review</a> · <a href="index.html#sources">EARTH sources &amp; licenses</a></p><p class="meta">Not affiliated with or endorsed by Roku or the source institutions. English website.</p></footer></body></html>

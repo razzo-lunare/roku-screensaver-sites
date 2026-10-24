@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "publisherName": "Tom Cocozzello",
+  "supportEmail": "thomas.cocozzello@gmail.com",
+  "effectiveDate": null,
+  "hosting": {
+    "providerName": "GitHub Pages (GitHub, Inc.)",
+    "privacyUrl": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
+    "operationalLogs": "GitHub Pages logs and stores visitors' IP addresses for security purposes, including signed-out visitors. GitHub controls its hosting/security processing and retention under its privacy statement; we do not promise a fixed deletion period for GitHub's logs."
+  },
+  "support": {
+    "providerName": null,
+    "privacyUrl": null,
+    "authorizedAccess": "Tom Cocozzello is the only person with access to the support inbox. The email service provider processes messages as described in its privacy information.",
+    "retention": "We retain support correspondence only as long as reasonably necessary to address requests and meet applicable legal obligations. We periodically review retained messages and delete or anonymize information no longer needed."
+  },
+  "appName": "EARTH",
+  "siteBaseUrl": "https://razzo-lunare.github.io/roku-screensaver-sites/earth",
+  "reviews": {
+    "policiesApproved": false,
+    "assetRightsReviewed": false,
+    "namesReviewed": false,
+    "languageCoverageReviewed": false
+  },
+  "website": {
+    "mode": "review",
+    "policyApproval": null
+  }
+}

@@ -1,0 +1,105 @@
+EARTH copyright and notices
+
+Original EARTH project code: Copyright (c) 2026 its respective copyright holders.
+This notice identifies the original project material and does not make a new
+license grant or claim ownership of public-domain or third-party content.
+The standalone lifecycle helper is project-authored code shared at build time.
+Third-party software, data and artwork retain their own notices and terms.
+No trademark, endorsement or ownership rights in NASA, JPL, Caltech, USGS,
+Arizona State University or Roku material are claimed.
+
+Images & artwork contains the full bundled image notices, including:
+NASA Goddard Blue Marble 2002 cloud-free daytime Earth mosaic; NASA Earth Observatory Black Marble
+2016 city-light map; NASA SVS CGI Moon Kit 2025 LRO photographic lunar texture;
+NASA/JSC IGOAL-based ISS illustration with OpenAI background extraction;
+and original procedural star positions and orbital guides (CC0).
+Source URLs, copyright credits, reuse-policy links and processing limits are
+included there. NASA imagery does not imply NASA endorsement.
+
+Software license contains the complete RokuCommunity MIT license, including
+copyright, permission, conditions and warranty/liability disclaimer, for the
+BrighterScript runtime helper bundled by the build tool. It also contains the
+satellite.js MIT license for the adapted local SGP4 propagator. Host-only development
+tools and the AI-generated concept reference are not included in this app.
+Roku supplies system fonts; no external font files are bundled.
+
+This is a design preview. The camera remains a fixed illustrative sample, not the user's location. Earth sunlight follows the actual device UTC clock. Lunar phase follows the actual device UTC clock, recalculated
+on startup and every minute; it does not use accelerated ISS preview time. The Moon's actual photographic surface map is not a claim
+of live lunar observations, libration or topographic shadows. Phase lighting
+uses approximate Sun/Moon longitudes and 3-degree shading steps. The phase mask is oriented toward the same projected Sun direction used by
+Earth lighting, using the same UTC update. Lunar surface geography stays fixed.
+The Moon remains an illustrative inset with geocentric phase, not its physical
+position in a common 3D scene or an observer-horizon view. Historical Earth and
+city-light imagery is not live weather or electricity data. No user location
+is collected or sent; preferences are stored locally on the Roku.
+
+The bottom-left clock shows actual local device date/time and follows Roku's
+12/24-hour setting. Moon phase and the clock do not use accelerated ISS time.
+
+Offline ISS positions: local near-Earth SGP4 (WGS72), initialized on the host
+using satellite.js 7.1.0 (MIT) and bundled CelesTrak general perturbations data.
+Elements epoch: 2026-10-23T16:37:59.005Z. Full source elements and provenance:
+pkg:/data/iss-orbit.json. CelesTrak source:
+https://celestrak.org/NORAD/elements/gp.php?CATNR=25544&FORMAT=TLE
+Orbital elements: USSPACECOM / 18th Space Defense Squadron, via Space-Track.org
+and CelesTrak (Dr. T.S. Kelso). Predictions are calculated locally by EARTH;
+the source agencies and CelesTrak do not endorse or validate this app.
+Space-Track's Redistribution of Basic SSA Information permits redistribution
+of basic TLE/OMM data and analysis with appropriate citation:
+https://www.space-track.org/documentation
+This basis applies to the bundled standard public ISS GP elements, not private
+operator data, SupGP, conjunction messages or a general CelesTrak license.
+Data-rights review: October 23, 2026. Full scoped basis and source references
+are in data/iss-orbit.json; data rights are separate from software MIT terms.
+Model: Vallado et al., Revisiting Spacetrack Report #3 (2006).
+https://celestrak.org/publications/AIAA/2006-6753/AIAA-2006-6753-Rev1.pdf
+The Software license category includes the complete satellite.js MIT notice.
+These are approximate orbital predictions, not spacecraft telemetry. Source
+elements age; later maneuvers and changes in atmospheric drag are unknown.
+The ISS and guide hide outside seven days before/after the element epoch.
+That window is an application freshness policy, not an accuracy guarantee.
+Updating the orbit requires a new app build containing updated elements.
+TEME kilometres are converted to Earth-fixed using Greenwich mean sidereal
+time; UTC approximates UT1, with no polar motion/EOP corrections or TDB claim.
+
+Real time is the default ISS speed and starts at the current calculated position
+using device UTC. The saved speed slider also offers 2x, 5x and 10x previews of
+predicted future positions. Every activation starts again at the current time;
+faster previews reset to current time after advancing six hours ahead. Reduced
+motion freezes the station display. The icon is enlarged; the full orbit guide
+is an approximate instantaneous orbital plane, not an exact future ground track.
+The camera still matches the fixed sample Earth view, not the user's location.
+Eclipse darkening uses an approximate cylindrical Earth shadow and the same
+calculated Sun direction as the globe, at the ISS prediction epoch; the icon's
+surface shading remains illustrative, not actual spacecraft attitude. The ISS
+artwork is an AI-edited derivative of a NASA/JSC IGOAL model rendering, not an
+unaltered NASA image. Small details may differ from the source; current model
+configuration and exact structural accuracy are not independently validated. Earth
+lighting and lunar phase have independent implementations and accuracy limits.
+The orbit guide can be hidden independently in settings.
+
+EARTH playback makes no network requests. Orbital data, images and software
+are bundled with the app. No external service receives playback timestamps,
+preferences, location or device identifiers from EARTH. There is no project
+backend, account, key or paid service. The developer's optional host-side orbit
+refresh downloads elements from CelesTrak before building; the Roku never does.
+Only complete local prediction batches are used; interpolation stops at their
+boundaries. An expired or failed prediction hides the ISS and guide while the
+rest of the screensaver continues. An ISS behind Earth is naturally hidden.
+Predictions remain in activation memory; there are no response downloads/cache.
+
+Earth's day/night boundary recalculates at startup and once per UTC minute
+using USNO approximate solar coordinates and Greenwich mean sidereal time:
+https://aa.usno.navy.mil/faq/sun_approx
+https://aa.usno.navy.mil/faq/GAST
+UTC approximates UT1; this is not TDB ephemeris data. No polar motion, EOP,
+atmospheric refraction or physical twilight-scattering accuracy is claimed.
+The night-side city lights are a historical 2016 composite. The view remains
+fixed at the sample camera (25 N, 95 W), not a detected user location. ISS
+preview speed does not accelerate Earth lighting. A dim neutral globe without a solar boundary
+remains during startup or if initial dynamic lighting fails; the prior usable frame
+is retained after a later failure. Solar calculations work offline.
+
+Menu covers: original OpenAI-generated EARTH promotional illustration, created
+October 22, 2026 and also used by the EARTH website. Not NASA photography,
+a runtime screenshot, live imagery or validated astronomy.

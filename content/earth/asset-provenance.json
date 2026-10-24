@@ -1,12 +1,31 @@
 {
+  "moonPhase": {
+    "model": "Truncated lunar longitude series; dominant equation-of-center and perturbation terms",
+    "reference": "https://stjarnhimlen.se/comp/ppcomp.html",
+    "input": "UTC seconds; UT approximation, not TDB",
+    "refreshSeconds": 60,
+    "phaseBins": 120,
+    "convention": "Fixed near-side surface; geocentric phase mask oriented toward the Earth-camera projected Sun; illustrative inset, not common 3D geometry"
+  },
   "schema": 1,
   "generator": "tools/earth/render-assets.py",
   "sources": {
     "day": {
-      "url": "https://maps.jpl.nasa.gov/tmaps/pix/ear0xuu2.jpg",
-      "sha256": "15888f83a67d5e3deb2601c5fa41a689790f30e8e3533222a4f6e3700f016780",
-      "credit": "Courtesy NASA/JPL-Caltech. Creator and owner: Caltech/JPL/USGS.",
-      "policy": "https://www.jpl.nasa.gov/jpl-image-use-policy/"
+      "url": "https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57730/land_ocean_ice_8192.png",
+      "cacheFile": "day-cloudfree.png",
+      "maxBytes": 33554432,
+      "sha256": "aaddcd967a9f09fb2d7ef50ff452bebfcf10192c520465d5eb1ad8446c716e98",
+      "dimensions": [
+        8192,
+        4096
+      ],
+      "credit": "NASA Goddard Space Flight Center. Reto St\u00f6ckli (land surface, shallow water); Robert Simmon (ocean color and compositing). MODIS science teams; USGS EROS and USGS Flagstaff (topography/Antarctica).",
+      "catalogue": "https://science.nasa.gov/earth/earth-observatory/the-blue-marble-true-color-global-imagery-at-1km-resolution/",
+      "policy": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license": "NASA imagery reproduction guidance; no third-party restriction noted for this map. No logos, people or endorsement.",
+      "projection": "Equirectangular, Greenwich at center, north up.",
+      "limitations": "Blue Marble 2002 cloud-free land surface, ocean color and sea ice historical mosaic; land observations June\u2013September 2001. No current weather or seasonal appearance claim.",
+      "product": "Land Surface, Ocean Color, and Sea Ice (no cloud layer)"
     },
     "moon": {
       "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg",
@@ -28,25 +47,892 @@
       "credit": "NASA Earth Observatory / Black Marble 2016, Suomi NPP VIIRS. NASA Earth Observatory images by Joshua Stevens, using Suomi NPP VIIRS data from Miguel Roman, NASA GSFC.",
       "catalogue": "https://science.nasa.gov/earth/earth-observatory/earth-at-night/maps/",
       "policy": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    "iss": {
+      "url": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/model/international-space-station-%28iss%29-%28d%29-%28igoal%29/International%20Space%20Station%20%28ISS%29%20%28D%29%20%28IGOAL%29.png",
+      "sha256": "f32217bd3652c17a9341bb14123b0918a754f35f7a8759d06a3240d968659cee",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "catalogue": "https://science.nasa.gov/3d-resources/international-space-station-iss-d-igoal/",
+      "credit": "Source rendering: NASA/JSC/Integrated Graphics, Operations, and Analysis Laboratory (IGOAL). Transparent derivative: OpenAI image editing, October 23, 2026.",
+      "policy": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license": "NASA media reproduction guidance; no third-party restriction noted on source item. Source credit does not imply endorsement or NASA validation of the AI-edited derivative. No CC0 dedication of NASA material or new first-party license grant.",
+      "sourceFile": "design/earth/artwork/iss-igoal-source.png",
+      "cutoutFile": "design/earth/artwork/iss-igoal-cutout-v1.png",
+      "cutoutSha256": "73a4eea611a9e46f62fe6fafdc243db02dd82c7760e3f486dccd498aae2147d2",
+      "limitations": "Fixed source-model configuration and view, with AI-assisted background extraction; small details may differ from the original. Not live spacecraft attitude, exact current configuration, lighting or telemetry. Enlarged for readability."
     }
   },
   "assets": {
-    "earth.png": {
-      "sha256": "50ed72d3858cd9bb345f855ae394027dcfefe17a3dcac67007a1215d1c356eb4",
+    "earth-day.png": {
+      "sha256": "ad45af65727b3dd359aa236f56f214fbd45756379583d7726734b227e28493f4",
+      "dimensions": [
+        1000,
+        1000
+      ]
+    },
+    "earth-night.png": {
+      "sha256": "8175ed3e2200e5624650dfe4d29a0032055a066e48373f4b4804ff9799309283",
       "dimensions": [
         1000,
         1000
       ]
     },
     "iss.png": {
-      "sha256": "6750b210d5efca0e002babd2da7573204d98b576e7504d315e1ed6137ab2b180",
+      "source": "iss",
+      "master": "design/earth/artwork/iss-igoal-cutout-v1.png",
+      "processing": "OpenAI background extraction, then uniform Lanczos fit to 384x224 intermediate, then Lanczos prefilter to native 96x56 RGBA; no runtime minification.",
+      "limitations": "Fixed source-model configuration and view, with AI-assisted background extraction; small details may differ from the original. Not live spacecraft attitude, exact current configuration, lighting or telemetry. Enlarged for readability.",
+      "sha256": "55129424c4a14a5aa815f463c1317104e9ddf61ee74013dccd126198f74a1ca7",
       "dimensions": [
         96,
         56
       ]
     },
+    "moon-phase/000.png": {
+      "sha256": "6a36bc9d8e467d3686d739295e05df814e5ecb6842b1571147a9c36cddd32f04",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/001.png": {
+      "sha256": "492af21c6d64ae627bc14059d002a062c03b672f5f4bca92407c4f1cdd6594bd",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/002.png": {
+      "sha256": "7cae09ba675369f3ee1af0b04f0587c6df55cec636d01951117ee306b6be0ac2",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/003.png": {
+      "sha256": "7cfb1bdf8c1ec6e4e5be000b74216b213c02261ca6b23390ff5a89e94d388940",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/004.png": {
+      "sha256": "6b9b0899060b8385724fc54fcfd2c88a93fa219361d71c3a3129664f3dc3f5b6",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/005.png": {
+      "sha256": "47870a14a568f4e7ecbe5fbe9071979a496426a4e77d48f06ae74d08879726fe",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/006.png": {
+      "sha256": "49b0335c6d7e36d6f09af1e4b2d803687ce6e2f710f8d4554b05a4be7c2b3229",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/007.png": {
+      "sha256": "57764d7de4208f4578739272835e67847200fe6580c4ecb32a22e837df4ba88c",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/008.png": {
+      "sha256": "e800ae1b9cb279fa4e6565d34cc0b43380b0d63bdb41c126f08c74138b22d50f",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/009.png": {
+      "sha256": "9129e5a23581911ec1d75a8eb527ccd3f3bee9cb27fcfe11d8e2cbea2f78fad7",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/010.png": {
+      "sha256": "e5c53e0ea440993eee22ca404e54d6aef13128a1e6feb62a6f28fea9a787ed08",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/011.png": {
+      "sha256": "f81ef45dc25fca090fc65fe3b467bd3137d00ea23daac811abee32093fcee1f1",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/012.png": {
+      "sha256": "c604b39754d4ceddcbb024217f7c9ba1450ec3701d239bf16721833f2a56f948",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/013.png": {
+      "sha256": "f5deb2cb55164a995f74cc19acf94b158347bf786f05ad18901a501d8fd0b87e",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/014.png": {
+      "sha256": "f9e597fd0fb33e0ccd1050ed8aff69c4f7048bb62805a28278090821a3183414",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/015.png": {
+      "sha256": "50273a36c4b959cb998f70d5c64f4a090321beac702da61767bec26ae376e33c",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/016.png": {
+      "sha256": "8d2b28b2277d1cf4b68c4da6f0597edc83878754c4b8e4d796b9c40ce0217f5c",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/017.png": {
+      "sha256": "b36f052309d1dbc23449005a1879475fda94319bf9aa4e43d649b13a33852ecb",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/018.png": {
+      "sha256": "91e0fe312bdead5035a9f15194f41041278e1c5b7d9e7e2468594053f450ada2",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/019.png": {
+      "sha256": "133419ceb52b1b4515b45c69b8d6c6832ffde9fafb9920eaba16673ca5d0755f",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/020.png": {
+      "sha256": "65409e64f12849a397d55a0dcaa24e01b6c10f94762233a7b9fcbcdd881d99ae",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/021.png": {
+      "sha256": "ae08fef588eec546651fbe7b21f9e21898dd19c09c68be35823259f76cdd80ff",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/022.png": {
+      "sha256": "2270680e6107d6332da880c11b7b256319c698344ba4537363a90788afdc86ac",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/023.png": {
+      "sha256": "0696cde9112f3c9f88d9a0991bf66ffecdf76c4ebf7955b8c600a24ba380b518",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/024.png": {
+      "sha256": "6d4d8ed275d97404c64cac1f275bebd70b4433298e4b8bc39e37681403c8e4b6",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/025.png": {
+      "sha256": "ffc39b8a5e7b747a2d0d583c67acf188e79de5751615e524662e952c86d3c80a",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/026.png": {
+      "sha256": "43960d4cd634c8c17b10c10c15063c17205964c3f483a9745b693536285c26c6",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/027.png": {
+      "sha256": "0c492b661afb0dbf6673eb1f971dc4bba9d2d637236e97d5f316cf3ad75485b2",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/028.png": {
+      "sha256": "bf2df956c4cfee7fe421d6b48a99982ef1ff76df19201798c961c6a2dfeab2e1",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/029.png": {
+      "sha256": "e388c7f53df7850400044678f8fca17d2632380f80f39ebf4038d1e2fc493c9f",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/030.png": {
+      "sha256": "dcc251899a66b657300841879c4e988c9989b0e39ffe00c85e00dd2f98e78a3d",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/031.png": {
+      "sha256": "1f70ad8c07d177d21417e51904921f95814b7c354bf7ef434880fe4c7261038e",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/032.png": {
+      "sha256": "0045a6d8e60f846937903cfbe831e652ff9398fd1bf28b34ce4f97f6bd563e9c",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/033.png": {
+      "sha256": "d82c0f16fac7047ddfe1c09bbb3d20bc79b030a3c9b3df67156a5cf80e061ca2",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/034.png": {
+      "sha256": "5bb07db5d24a263da10683939518170cd2109df72e37d179bcda35d3228dffa9",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/035.png": {
+      "sha256": "8b35410a80d702609426c190706ca2cd755133aa8f0667558c7693819790a94b",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/036.png": {
+      "sha256": "31c8cdcb3571b9fccdf4f6efaae7db6e20f28df6d61e84adc424d6b9cc7b0629",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/037.png": {
+      "sha256": "d09776dca8077c83cc91ebff51e87c7dbb20a14d30e4d5947de9f22dbbce1383",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/038.png": {
+      "sha256": "04b1e86915226646f85a1950f3f9cf6f539414b85b5f7fed2b30b961726d2f48",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/039.png": {
+      "sha256": "042c0961ce9ec298c9e58dd9cc0d3588f1749216a25048d74944aa05f8ca573a",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/040.png": {
+      "sha256": "91f9d81deca9b50e7e09c514f3347755bf4425eb58adc8b0e5209ee441e40bbe",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/041.png": {
+      "sha256": "4c5dbac4e4067ff281e1802da97186842ad818e89417e244cec2ef5bb4ae56fa",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/042.png": {
+      "sha256": "9162427b56ac29fc20c73224e507138d53708090281b2f2dd2808a7898fc0ac7",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/043.png": {
+      "sha256": "3f1882d72b7ccb1efb6a2247185ee6d438131c8f142f808cec90e10f1c1281b7",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/044.png": {
+      "sha256": "aa5050856d4fb338f0e00191b59b6e51522a9a432a838b5f5fc97df14f734cdf",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/045.png": {
+      "sha256": "f7eb6ddc087b112d8722c0907cb3f94d39576643ae49041a3ac065f582956191",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/046.png": {
+      "sha256": "1b8c45e2b5095ef0590966751191b23014f907ea1b351ea64b99456318ac08e2",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/047.png": {
+      "sha256": "94d3de2aee6103c07d25992b602db0aa218d73f81599649b89648af07d868ece",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/048.png": {
+      "sha256": "ed207985de7ccf258452bcbf242ffd404f50d45166fbb5b7641ce60fd7b5b46f",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/049.png": {
+      "sha256": "78cde21e7d1f62fec9e16153d894708df921dedbcf688d152990ef97975895cc",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/050.png": {
+      "sha256": "a79b637f031253a234d1141b351c6ea53dff77663adf9728e3c48b8d14ab489d",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/051.png": {
+      "sha256": "11ae65262538ad2c513266fd717df6ab5878471dd8aa62241bb528269d19768e",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/052.png": {
+      "sha256": "85791a4142e7596ba6e6ba263f7783fc1be334da658c5fc369acca4e631177c6",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/053.png": {
+      "sha256": "8023661927732ff54500026be1c5bbbaa0c85d7d8bb9ae55161710eeab57d144",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/054.png": {
+      "sha256": "e96924feb63f0286fb1dd63ce146e2fa6fc2bda55b4fe8b1a5ba2cca0d7be41a",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/055.png": {
+      "sha256": "beb141c182370a3ebb94e064300ab2093b137f2868899db02cfa058abba3cac5",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/056.png": {
+      "sha256": "cac1da67c1fe6b91bb2907000daa56524d52b406e5099aff82bb0dd6d8e5a527",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/057.png": {
+      "sha256": "6c221680beeff91e77f3c45d43e7de1b9332686ad81a5e710f86d416b5031403",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/058.png": {
+      "sha256": "bf6263bc5ce78fd21954591e50e810fa0c47ec7398cef88ea72e1222ebe8df24",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/059.png": {
+      "sha256": "eeb4c969e32d5f9b9b6b84f3e01f60c6ea42ab48466e93fcbc15492af92760da",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/060.png": {
+      "sha256": "b198db15abab297a98d0d6b44c394f78b5b8a56a8e7c8957e11a5ed05b491967",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/061.png": {
+      "sha256": "dd9bca67f0646a585c183c67f065d3dcf048c5b74f936e8d15071420938e9797",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/062.png": {
+      "sha256": "efca7d4737af1f26f903d4e3435a3575dde1a18c37b4a5429b517fbe6029c052",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/063.png": {
+      "sha256": "dc2f989212b688f2df41bf116e661847af384eff26620755f4db9b202f5219c6",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/064.png": {
+      "sha256": "93ce843d2b6c33fed3c9e8f23371c6d33d85c1cee08e413dd7feacaf9b0ecd3a",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/065.png": {
+      "sha256": "647467351021d9468b6aeb4075179fd8726ce2521e33e9a5f7d22163a8f747f3",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/066.png": {
+      "sha256": "caaf18381850ddbcee469f1b7b782f6500ac76302df9827f92a34f6ebec78d5d",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/067.png": {
+      "sha256": "fc6e2ebe9495105202f130d652b3db1e59cb7b4b1f3caca95d0dccf98cc34d6b",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/068.png": {
+      "sha256": "c369dc48f9206db82b83e3c2bb034587a5128ccf4e3d568acba6fc5f8ca022af",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/069.png": {
+      "sha256": "2c6c553d03cdf11e2e8c31faea59d21b84680a4ff6103bf8f3c97df359cd872d",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/070.png": {
+      "sha256": "07b675d255b7f4085fd1e5fc76cffae0ef6fce560cf25285c8493f56b26c740c",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/071.png": {
+      "sha256": "b418060a43fa57c851c6ce0397510eb57da686d7e023420ca18b31a325267fec",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/072.png": {
+      "sha256": "87b5e14a2b0961e448c23997f3603dffa3f3d926ea491f7490e57dfb8f4bd074",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/073.png": {
+      "sha256": "7605f86b5b4ebb793e538b17646c9ef49735c15e73444c6444cd21773880fb98",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/074.png": {
+      "sha256": "ab35fbfd303d3c1ea83bc4b682b171bc88023c0f9b4736570544c8007a330984",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/075.png": {
+      "sha256": "b8caccbb12c16a09b8edb42ae11dc64f9163bb008e08c8bf9f88ea3b9223da72",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/076.png": {
+      "sha256": "33a7e363450093f9afc896185e5ea0adc260d1dd08c76bdf2ea2c6d42689d718",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/077.png": {
+      "sha256": "273949fbb8de1bf37350167f24534df9eebdb990a3877ccc29711313447f7e18",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/078.png": {
+      "sha256": "7608f4a9fcfd3be881cc3012e5552201af1d8f037190acb048620643db272521",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/079.png": {
+      "sha256": "b07fd41f6d8f1d1252f4321de915259549968836590b5fe3809b94fc4643c7ae",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/080.png": {
+      "sha256": "1995414b2cd83656557ee5190e0970cf3c0ea09750acdc1b73502741dd194193",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/081.png": {
+      "sha256": "0fe4716aa5182deeeb92c29c977105496dbc45972f683a7d63784849ff4b3beb",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/082.png": {
+      "sha256": "879831bd972328064799b90a3dcfc97fa0daff0fe88f5eb84e357a78925cd2d5",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/083.png": {
+      "sha256": "325c7a7481d48da68b29904137975b633a08cd6ece7f26605897f52377ad8907",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/084.png": {
+      "sha256": "62781f457b59cbd066750ce2ce3e457581dd3652f4843e32351167e72f1a8e47",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/085.png": {
+      "sha256": "f99a84d2e666016d2b2ce4c6ea619a1f9bbb0aa400ba55981133ed4aaf389bf7",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/086.png": {
+      "sha256": "89c975c7fd9f951583e10d688ef16a23d9114127bcee34789f0587ac65fc1aad",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/087.png": {
+      "sha256": "ec2dcc4a0c13e690aeaa0f3ae674a82cf627621255c58a42910228f7a55d2a9b",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/088.png": {
+      "sha256": "dbc9eb7e594d902547366154221a124bfb233d333d1e54fb23c7b42d5ebbc3db",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/089.png": {
+      "sha256": "bfd3fe1aca548f04489d0db8eb94ad8488b7dde0ea0d74719b95afca12cd02b5",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/090.png": {
+      "sha256": "6ee88a1eab4e91af11419a894523b16fb751eaff2c5f169c2ffb87a6ea075064",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/091.png": {
+      "sha256": "3d4a97d2c5882efa22a8544f5c9dc36efd2a29037a5e05ff725302e561290c95",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/092.png": {
+      "sha256": "e8ba9f1d71564324b129302d5fc06a4b321018eb21124776ef910b0ea48f9e3c",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/093.png": {
+      "sha256": "3af02d45271b0682bc61c6865b0746ff41c6d748286ffc389eef57576d2dd794",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/094.png": {
+      "sha256": "c2ffffccd4b8af28ed377212715e8153ed7b1b2a81f467770980176994679fa9",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/095.png": {
+      "sha256": "fde83da667e2d61d4401aa8a83d77d8a5d839cfea91dc85b5620480bd09992a7",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/096.png": {
+      "sha256": "6f62eb8f82265bb84056d7c1650dc8fe82db6707a75e20ed4abbe3918d56f5f8",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/097.png": {
+      "sha256": "f2ad6066ebbc94a68518f6667bdbc2a7115bfda556a6c6663560d8afef582f72",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/098.png": {
+      "sha256": "561a625dd2432ef1b32c0031d53d67ce8977f1ed51bedcee4b67e65791f26b0f",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/099.png": {
+      "sha256": "68f5e36e83fbd3e98b150f3fc9a803553d32a2f2807330a35de417e471de7884",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/100.png": {
+      "sha256": "173bcf61fe861699e3e9dcbab9ff6e2a5b2c297efdbd7002d6f813609061d977",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/101.png": {
+      "sha256": "cdb849a48618241efba8d0e3327651c5ec4c6f3836bd753d735b127255a6b73b",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/102.png": {
+      "sha256": "31ce7a941d70719eff8cc4b4a496b192defcae8b8dd87187c1679df7bdf88eb9",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/103.png": {
+      "sha256": "194c1dacd8b0ba7cfa352c7bb9676532f6c65857bdf5c7fceb2afedf75a3e321",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/104.png": {
+      "sha256": "6ab83a6fc2248dfbb131d195977ca33f5dd946eddb3e0c832e1032b335543e2e",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/105.png": {
+      "sha256": "242ccdda41ec90e5c4b4e2eab12fe96b8eacea9396e616505e14cce9508740ba",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/106.png": {
+      "sha256": "49d591e1611f792bacf476317c538c3ebcf250ec81ff8041a852b3723731eeeb",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/107.png": {
+      "sha256": "5d7298b801268a5b269b9ed140a470cc1ce4396b04b15e629208160a16308ed5",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/108.png": {
+      "sha256": "d26cea170c848291e0f523b18982d56a45f59c4fc7481d89dd88de25b5644edc",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/109.png": {
+      "sha256": "68bfc47cfcf5e0f7745cb3fd4602cd9d0300edfa08018b2fb14e1512cf944360",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/110.png": {
+      "sha256": "11724c5efde3dc4d3a7a12e6e50926c5236ad13224f6150d31777d6e4558c897",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/111.png": {
+      "sha256": "2b779c2693f44390790b5ebe9aa9e9387d1f8bb268145c882fc802b00989f29b",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/112.png": {
+      "sha256": "5b8c1fd7debd26745c65e4c5a61fd7e40cb6d970793867b2e257bd9425089984",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/113.png": {
+      "sha256": "1bfd3073ea3d0ed185cf7605cabd524dbdb711f5e82ee8ba41c9a647dfdffd40",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/114.png": {
+      "sha256": "a509fd8c360cf9e32c80dad56c4140bc13cb4556e9463aacbff52c00fcdb2525",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/115.png": {
+      "sha256": "91898e114ed8f68d5b34ade9f296539c4a7462362e891cdb2bcccb9fc6760adf",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/116.png": {
+      "sha256": "c9c8c7b6b4a18dcf27102770980570486d9f144479d3357ad7bc9275a3cddc83",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/117.png": {
+      "sha256": "105d4cd8c4dbadb082546f18c33afcf9126f7eff3e44a9dd95a9e9a6c6e77987",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/118.png": {
+      "sha256": "41bb1600899bbade160a7096eeb8febc3e7d94f43485668ad1931f2a78117ad6",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
+    "moon-phase/119.png": {
+      "sha256": "ca92f3a53cfe43a4588407e1bc4e0a0ac89af9b8d1dfe2814c9b45be14030584",
+      "dimensions": [
+        220,
+        220
+      ]
+    },
     "moon.png": {
-      "sha256": "ca3830876fac05b08d3c20b96bcba47b301bf4177b373c4f3eca18c8f2edf1ed",
+      "sha256": "eb23d82e252ca619bfc978d1b1a355471177804d4e3c771d615148a20196fbcf",
       "dimensions": [
         220,
         220
@@ -65,16 +951,60 @@
         1440,
         900
       ]
+    },
+    "cover-fhd.jpg": {
+      "sha256": "f0f9d87eca11b602c1c054736c484319269d3c98f4e8944f7d9765a97a9bfdd9",
+      "dimensions": [
+        540,
+        405
+      ],
+      "source": "design/earth/artwork/earth-cover-v1.png",
+      "derivation": "Original OpenAI-generated promotional artwork used by the site project, resized by tools/earth/export-cover.mjs; illustrative, not a runtime screenshot."
+    },
+    "cover-hd.jpg": {
+      "sha256": "e372d928767ef344e666cc9a25a9b66bd40e8ead786f2308c4c79d3aa5cadcfb",
+      "dimensions": [
+        290,
+        218
+      ],
+      "source": "design/earth/artwork/earth-cover-v1.png",
+      "derivation": "Original OpenAI-generated promotional artwork used by the site project, resized by tools/earth/export-cover.mjs; illustrative, not a runtime screenshot."
+    },
+    "orbit-stroke.png": {
+      "sha256": "4f10bafc37471baf9636f86e86ae0b47c85145f780d08d2519b04ea3c1cb1e43",
+      "dimensions": [
+        8,
+        8
+      ],
+      "processing": "Original procedural white stroke with symmetric alpha falloff; CC0 1.0."
     }
   },
   "sampleLocation": {
     "latitudeDegrees": 25,
     "longitudeDegrees": -95
   },
+  "solarLighting": {
+    "model": "USNO approximate solar coordinates and Greenwich mean sidereal time",
+    "references": [
+      "https://aa.usno.navy.mil/faq/sun_approx",
+      "https://aa.usno.navy.mil/faq/GAST"
+    ],
+    "clock": "UTC approximates UT1; not TDB; no Earth-orientation corrections",
+    "refreshSeconds": 60,
+    "dayDimensions": [
+      1000,
+      1000
+    ],
+    "nightOverlayDimensions": [
+      1000,
+      1000
+    ],
+    "headerSha256": "504434851d80b85763cfa6c1928603e3928dc55624b36deb9cf345deb55e7fad"
+  },
   "limitations": [
-    "Fixed sample camera and solar direction, not user location or current lighting.",
+    "Fixed sample camera, not user location. Runtime sunlight follows UTC; startup uses a dim neutral globe without a solar boundary. Baked-light prototype artwork is host-only.",
     "2016 night-light composite and historic daytime mosaic, not live observations.",
-    "Photo-based Moon albedo with illustrative fixed phase; date-correct phase not implemented.",
-    "Schematic enlarged ISS and compressed 180-second orbit; no live orbital data."
+    "Photographic lunar near-side surface with clock-derived approximate phase, quantized to 3 degrees; lit limb aligned with the Earth-camera projected Sun; illustrative geocentric inset, no local horizon tilt, libration or topographic shadows.",
+    "Fixed source-model configuration and view, with AI-assisted background extraction; small details may differ from the original. Not live spacecraft attitude, exact current configuration, lighting or telemetry. Enlarged for readability."
   ]
 }
