@@ -72,7 +72,16 @@ test('collection uses canonical artwork and accurately labels Earth preview',asy
  assert.match(privacy,/GitHub controls its hosting/);
  assert.match(privacy,/local registry/);
  assert.match(privacy,/no effective date/);
- assert.match(privacy,/has not yet confirmed the email service provider/);
+ assert.doesNotMatch(privacy,/has not yet confirmed the email service provider/);
+ for(const product of ['earth','universe']){
+  const page=await readFile(join(root,'docs',product,'privacy.html'),'utf8');
+  assert.match(page,/Email service provider: Google \(Gmail\)/);
+  for(const url of ['https://policies.google.com/privacy','https://support.google.com/mail/answer/10434152?hl=en','https://policies.google.com/technologies/retention'])assert.ok(page.includes(url));
+  assert.match(page,/does not guarantee immediate removal/);
+  assert.match(page,/only person with access/);
+  assert.match(page,/reasonably necessary/);
+ }
+
  assert.match(earth,/Full image notices/);
  for(const name of ['earth-preview.jpg','earth-cover.png','universe-store-cover.png'])assert.deepEqual(await readFile(join(root,'docs/assets',name)),await readFile(join(root,'content/assets',name)));
 });

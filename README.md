@@ -101,8 +101,9 @@ notices, provenance and hashes; no application runtime implementation.
 
 ## Remaining decisions
 
-Confirm support email provider/privacy information, effective date and final
-publisher policy approval. Finish asset rights, naming/country and website
+Gmail/Google support provider and official privacy/retention references were
+confirmed and updated October24. Effective date and final publisher policy
+approval remain outstanding. Finish asset rights, naming/country and website
 language reviews. Email inbox delivery/access have not been independently tested.
 The selected Gmail address and owner-only inbox access are confirmed; retention
 is purpose-based, with periodic manual review, no fixed deadline or automation.
@@ -140,3 +141,12 @@ notices and orbit metadata are refreshed from the reviewed app sources.
 EARTH pages no longer send policy navigation to UNIVERSE. Both sets of policies
 retain public-review status: no final approval or effective date is invented.
 See CONTRIBUTING.md for independent product configuration and repeatable checks.
+
+## Gmail privacy references — October24, 2026
+
+The publisher confirmed Gmail for support. Both product configurations identify
+Google (Gmail) and link the official Google Privacy Policy, Gmail privacy overview
+and Google retention explanation. The support sections distinguish the publisher's
+purpose-based retention from Google's processing and backup/deletion behavior.
+No account setting or effective date was changed. The reference lookup does not
+claim an account-specific Google configuration or final policy approval.

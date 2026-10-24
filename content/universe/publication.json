@@ -25,10 +25,14 @@
     "operationalLogs": "GitHub Pages logs and stores visitors' IP addresses for security purposes, including signed-out visitors. GitHub controls its hosting/security processing and retention under its privacy statement; we do not promise a fixed deletion period for GitHub's logs."
   },
   "support": {
-    "providerName": null,
-    "privacyUrl": null,
+    "providerName": "Google (Gmail)",
+    "privacyUrl": "https://policies.google.com/privacy",
     "authorizedAccess": "Tom Cocozzello is the only person with access to the support inbox. The email service provider processes messages as described in its privacy information.",
-    "retention": "We retain support correspondence only as long as reasonably necessary to address requests and meet applicable legal obligations. We periodically review retained messages and delete or anonymize information no longer needed."
+    "retention": "We retain support correspondence only as long as reasonably necessary to address requests and meet applicable legal obligations. We periodically review retained messages and delete or anonymize information no longer needed.",
+    "privacyDetailsUrl": "https://support.google.com/mail/answer/10434152?hl=en",
+    "retentionPrivacyUrl": "https://policies.google.com/technologies/retention",
+    "providerConfirmedOn": "2026-10-24",
+    "privacyVerifiedOn": "2026-10-24"
   },
   "listing": {
     "monetization": null,
