@@ -103,3 +103,21 @@ The generated webroot now includes product-specific EARTH policy/support pages:
 Normal push to the existing main/docs source publishes these pages. Verify the
 Pages action for the pushed commit and HTTP200/content at all four URLs; source
 commit success alone is not live deployment proof. Review status is unchanged.
+
+## Animated Solar System deployment — October 25, 2026
+
+Rename commit `266af14` was merged with remote EARTH/policy commits `ee6c1f4`
+and `36bc47b` in `8d16cec`, then pushed normally to `main`. No remote history
+was overwritten. Six website tests pass, including local links, full notices,
+legacy redirects and independent EARTH policy configuration.
+
+HTTPS retrieval verified 17 live resources byte-for-byte against generated
+`docs/`: collection home, stylesheet, current cover, all five pages under
+`animated-solar-system/`, all five static redirect pages under `universe/`,
+and EARTH overview/privacy/terms/support. All returned HTTP 200. Redirect
+markup and fallback links point to the matching new page. Current product URL:
+https://razzo-lunare.github.io/roku-screensaver-sites/animated-solar-system/
+
+Review-draft status and final-policy gates remain active. This deployment does
+not change Roku Dashboard listings or install a TV package. Existing EARTH
+copy, source/license notices and Gmail privacy/retention disclosures are preserved.
