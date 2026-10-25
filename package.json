@@ -6,7 +6,7 @@
     "build": "node tools/build.mjs",
     "test": "node --test",
     "check:release": "node tools/build.mjs --release",
-    "sync:universe": "node tools/sync-universe.mjs"
+    "sync:animated-solar-system": "node tools/sync-animated-solar-system.mjs"
   },
   "engines": {"node": ">=22"}
 }

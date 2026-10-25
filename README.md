@@ -1,7 +1,7 @@
 # Independent Roku screensaver websites
 
 Public website-only repository for Tom Cocozzello's standalone screensavers.
-UNIVERSE and the EARTH design preview have separate product paths.
+Animated Solar System and the EARTH design preview have separate product paths.
 The private Roku application repository and runtime source are not included.
 
 ## Current status
@@ -47,19 +47,19 @@ For local preview: `python3 -m http.server 8080 --directory docs`, then visit
 
 ## Sources and maintenance
 
-- `content/universe/site/*.html`: canonical English page fragments, adapted from
+- `content/animated-solar-system/site/*.html`: canonical English page fragments, adapted from
   the app publication drafts. Make future website content changes here.
 - `content/style.css`: canonical shared design.
-- `content/assets/`: UNIVERSE and EARTH cover artwork, and EARTH native Roku preview.
+- `content/assets/`: Animated Solar System and EARTH cover artwork, and EARTH native Roku preview.
 - `content/earth/`: EARTH overview, image notices and source provenance.
-- `content/universe/publication.json`: public publisher facts and review state.
+- `content/animated-solar-system/publication.json`: public publisher facts and review state.
   Original store fields remain unresolved; they do not gate website generation.
-- `content/universe/credits.json`: complete unwrapped app notices and map
+- `content/animated-solar-system/credits.json`: complete unwrapped app notices and map
   provenance, exported read-only. Includes proprietary, MIT and separate artwork
   terms, scientific references and input SHA-256 hashes.
 - `tools/build.mjs`: static generator. `docs/`: generated Pages webroot.
 
-The old app `publishing/universe/site` fragments are now an import baseline,
+The old app `publishing/animated-solar-system/site` fragments are now an import baseline,
 not the source for this website. Do not edit generated `docs/` files directly.
 The app owner should treat these website sources as canonical for future web
 changes. Store listing/localization plans remain in the private app project.
@@ -67,7 +67,7 @@ changes. Store listing/localization plans remain in the private app project.
 After **every app credit, license, asset or provenance change**, run:
 
 ```sh
-npm run sync:universe -- ../roku-screensavers
+npm run sync:animated-solar-system -- ../roku-screensavers
 npm run build
 npm test
 ```
@@ -86,12 +86,12 @@ No app files are changed by the sync command.
 Only these paths belong in this public Git repository:
 
 `README.md`, `HOSTING.md`, `RIGHTS.md`, `.gitignore`, `package.json`,
-`content/style.css`, `content/assets/{universe-store-cover.png,earth-cover.png,earth-preview.jpg}`,
+`content/style.css`, `content/assets/{animated-solar-system-store-cover.png,earth-cover.png,earth-preview.jpg}`,
 `content/earth/{image-notices.txt,asset-provenance.json,site/index.html}`,
-`content/universe/publication.json`,
-`content/universe/credits.json`, `content/universe/site/*.html`,
-`tools/{build,sync-universe}.mjs`, `tests/site.test.mjs`, and generated
-`docs/{index.html,style.css,.nojekyll,universe/*.html,earth/index.html,earth/asset-provenance.json,assets/universe-store-cover.png,assets/earth-cover.png,assets/earth-preview.jpg}`.
+`content/animated-solar-system/publication.json`,
+`content/animated-solar-system/credits.json`, `content/animated-solar-system/site/*.html`,
+`tools/{build,sync-animated-solar-system}.mjs`, `tests/site.test.mjs`, and generated
+`docs/{index.html,style.css,.nojekyll,animated-solar-system/*.html,earth/index.html,earth/asset-provenance.json,assets/animated-solar-system-store-cover.png,assets/earth-cover.png,assets/earth-preview.jpg}`.
 
 **Only `docs/` is the Pages publishing source.** Never upload the private app
 repository, runtime `.brs` or component files, local config, credentials,
@@ -117,7 +117,7 @@ approve policies, legal clearance or Roku submission.
 
 ## Product imagery
 
-UNIVERSE uses the app's checked-in `cover-fhd.png` store cover artwork, an
+Animated Solar System uses the app's checked-in `cover-fhd.png` store cover artwork, an
 AI-generated illustration, not a runtime screenshot or evidence of store publication.
 EARTH uses the app owner's native Roku `stars-after.jpg` milestone capture;
 its screenshot caption and overview identify the sample astronomy and location.
@@ -129,3 +129,20 @@ with future imagery changes. EARTH has no store/download link or release claim.
 EARTH collection cover: original OpenAI-generated promotional artwork, handed
 off by the Earth artwork thread from `design/earth/artwork/earth-cover-v1.png`.
 It is labeled as artwork; the separate overview screenshot shows current behavior.
+
+
+## Animated Solar System rename (October 24, 2026)
+
+Current sources, image filenames, sync command and generated product pages use
+`animated-solar-system`. The previous `/universe/` URLs remain as static redirect
+pages so previously shared Roku policy/support links keep working. The current
+product title and cover are **Animated Solar System**. Canonical artwork is the
+English menu cover from app build 0.4.53; scientific/imagery qualifications and
+public-review status are unchanged. Historical hosting evidence above retains
+the URLs and names verified at that time.
+
+```sh
+npm run sync:animated-solar-system -- ../roku-screensavers
+npm run build
+npm test
+```

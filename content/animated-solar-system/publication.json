@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "appName": "UNIVERSE",
+  "appName": "Animated Solar System",
   "publisherName": "Tom Cocozzello",
   "supportEmail": "thomas.cocozzello@gmail.com",
   "supportPhone": null,
-  "siteBaseUrl": "https://razzo-lunare.github.io/roku-screensaver-sites/universe",
+  "siteBaseUrl": "https://razzo-lunare.github.io/roku-screensaver-sites/animated-solar-system",
   "effectiveDate": null,
   "markets": [
     "US",
@@ -46,14 +46,15 @@
   },
   "publicationAuthorization": null,
   "brandingDecision": {
-    "direction": "Keep the proposed names",
+    "direction": "Rename the screensaver to Animated Solar System in every supported language",
     "names": [
-      "UNIVERSE",
-      "UNIVERSO",
-      "UNIVERS",
-      "UNIVERSUM"
+      "Animated Solar System",
+      "Sistema Solar Animado",
+      "Système solaire animé",
+      "Animiertes Sonnensystem",
+      "Sistema Solare Animato"
     ],
-    "confirmedOn": "2026-10-19",
+    "confirmedOn": "2026-10-24",
     "status": "Owner-selected; trademark clearance review remains separate"
   },
   "website": {

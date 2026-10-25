@@ -81,7 +81,7 @@ All six HTML URLs listed above and `style.css` return HTTPS HTTP 200. Each
 response matches its generated local file byte-for-byte. This also verifies
 the full credits and provenance, public review banner, contact email and
 relative navigation content are preserved in the deployment. The live home
-and UNIVERSE overview were inspected in an unauthenticated browser; the
+and Animated Solar System overview were inspected in an unauthenticated browser; the
 stylesheet and decorative illustration render correctly at desktop width.
 Narrow-screen visual inspection remains unverified.
 
