@@ -1,7 +1,7 @@
 # Independent Roku screensaver websites
 
 Public website-only repository for Tom Cocozzello's standalone screensavers.
-Animated Solar System and the EARTH design preview have separate product paths.
+Animated Solar System and EARTH have separate product and policy paths.
 The private Roku application repository and runtime source are not included.
 
 ## Current status
@@ -9,7 +9,7 @@ The private Roku application repository and runtime source are not included.
 **Live on GitHub Pages, verified October 22, 2026:**
 https://razzo-lunare.github.io/roku-screensaver-sites/
 
-All six public HTML pages and the stylesheet return HTTP 200 and match the
+The original six public HTML pages and the stylesheet return HTTP 200 and match the
 generated local files byte-for-byte. The Pages deployment succeeded. Hosting
 is verified; policy approval and Roku store readiness remain separate.
 
@@ -51,7 +51,7 @@ For local preview: `python3 -m http.server 8080 --directory docs`, then visit
   the app publication drafts. Make future website content changes here.
 - `content/style.css`: canonical shared design.
 - `content/assets/`: Animated Solar System and EARTH cover artwork, and EARTH native Roku preview.
-- `content/earth/`: EARTH overview, image notices and source provenance.
+- `content/earth/`: EARTH overview/privacy/terms/support, independent review configuration, complete notices and image/orbit provenance.
 - `content/animated-solar-system/publication.json`: public publisher facts and review state.
   Original store fields remain unresolved; they do not gate website generation.
 - `content/animated-solar-system/credits.json`: complete unwrapped app notices and map
@@ -85,13 +85,13 @@ No app files are changed by the sync command.
 
 Only these paths belong in this public Git repository:
 
-`README.md`, `HOSTING.md`, `RIGHTS.md`, `.gitignore`, `package.json`,
+`README.md`, `CONTRIBUTING.md`, `HOSTING.md`, `RIGHTS.md`, `.gitignore`, `package.json`,
 `content/style.css`, `content/assets/{animated-solar-system-store-cover.png,earth-cover.png,earth-preview.jpg}`,
-`content/earth/{image-notices.txt,asset-provenance.json,site/index.html}`,
+`content/earth/{publication.json,image-notices.txt,earth-notices.txt,sgp4-license.txt,runtime-license.txt,iss-orbit.json,asset-provenance.json,site/*.html}`,
 `content/animated-solar-system/publication.json`,
 `content/animated-solar-system/credits.json`, `content/animated-solar-system/site/*.html`,
 `tools/{build,sync-animated-solar-system}.mjs`, `tests/site.test.mjs`, and generated
-`docs/{index.html,style.css,.nojekyll,animated-solar-system/*.html,earth/index.html,earth/asset-provenance.json,assets/animated-solar-system-store-cover.png,assets/earth-cover.png,assets/earth-preview.jpg}`.
+`docs/{index.html,style.css,.nojekyll,animated-solar-system/*.html,universe/*.html,earth/*.html,earth/asset-provenance.json,earth/iss-orbit.json,assets/animated-solar-system-store-cover.png,assets/earth-cover.png,assets/earth-preview.jpg}`.
 
 **Only `docs/` is the Pages publishing source.** Never upload the private app
 repository, runtime `.brs` or component files, local config, credentials,
@@ -101,8 +101,9 @@ notices, provenance and hashes; no application runtime implementation.
 
 ## Remaining decisions
 
-Confirm support email provider/privacy information, effective date and final
-publisher policy approval. Finish asset rights, naming/country and website
+Gmail/Google support provider and official privacy/retention references were
+confirmed and updated October24. Effective date and final publisher policy
+approval remain outstanding. Finish asset rights, naming/country and website
 language reviews. Email inbox delivery/access have not been independently tested.
 The selected Gmail address and owner-only inbox access are confirmed; retention
 is purpose-based, with periodic manual review, no fixed deadline or automation.
@@ -117,7 +118,7 @@ approve policies, legal clearance or Roku submission.
 
 ## Product imagery
 
-Animated Solar System uses the app's checked-in `cover-fhd.png` store cover artwork, an
+Animated Solar System uses the app's checked-in `cover-fhd.jpg` store cover artwork, an
 AI-generated illustration, not a runtime screenshot or evidence of store publication.
 EARTH uses the app owner's native Roku `stars-after.jpg` milestone capture;
 its screenshot caption and overview identify the sample astronomy and location.
@@ -130,6 +131,25 @@ EARTH collection cover: original OpenAI-generated promotional artwork, handed
 off by the Earth artwork thread from `design/earth/artwork/earth-cover-v1.png`.
 It is labeled as artwork; the separate overview screenshot shows current behavior.
 
+## EARTH update — October 24, 2026
+
+EARTH now has its own privacy, terms and support pages. Overview and collection
+copy describe current date-based lighting, Moon phase and local SGP4 ISS tracking,
+including dated elements, seven-day display limits and no playback networking.
+The native screenshot is EARTH0.1.22 on October23; image/astronomy/software
+notices and orbit metadata are refreshed from the reviewed app sources.
+EARTH pages no longer send policy navigation to Animated Solar System. Both sets of policies
+retain public-review status: no final approval or effective date is invented.
+See CONTRIBUTING.md for independent product configuration and repeatable checks.
+
+## Gmail privacy references — October24, 2026
+
+The publisher confirmed Gmail for support. Both product configurations identify
+Google (Gmail) and link the official Google Privacy Policy, Gmail privacy overview
+and Google retention explanation. The support sections distinguish the publisher's
+purpose-based retention from Google's processing and backup/deletion behavior.
+No account setting or effective date was changed. The reference lookup does not
+claim an account-specific Google configuration or final policy approval.
 
 ## Animated Solar System rename (October 24, 2026)
 

@@ -1,6 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile,readdir,access} from 'node:fs/promises';
+import {readFile,readdir,access,mkdtemp,cp,writeFile,rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
 const root=resolve(import.meta.dirname,'..');
@@ -8,8 +9,8 @@ execFileSync(process.execPath,['tools/build.mjs'],{cwd:root});
 test('only static pages and stylesheet enter the Pages webroot; all local links resolve',async()=>{
  const files=async p=>(await Promise.all((await readdir(p,{withFileTypes:true})).map(async d=>d.isDirectory()?files(join(p,d.name)):[join(p,d.name)]))).flat();
  const paths=await files(join(root,'docs'));
- assert.equal(paths.length,18);
- const assets=['assets/earth-cover.png','assets/animated-solar-system-store-cover.png','assets/earth-preview.jpg','earth/asset-provenance.json'];
+ assert.equal(paths.length,22);
+ const assets=['assets/earth-cover.png','assets/animated-solar-system-store-cover.png','assets/earth-preview.jpg','earth/asset-provenance.json','earth/iss-orbit.json'];
  for(const p of paths){
   assert.ok(/\.(?:html|css)$|\.nojekyll$/.test(p)||assets.some(a=>p===join(root,'docs',a)));
   if(!p.endsWith('.html'))continue;
@@ -20,9 +21,11 @@ test('only static pages and stylesheet enter the Pages webroot; all local links 
   assert.equal((html.match(/<h1\b/g)||[]).length,1);
   for(const [,href]of html.matchAll(/(?:href|src)="([^"]+)"/g)){
    if(/^(https:|mailto:|#)/.test(href))continue;
-   const local=resolve(p,'..',href);
+   const [target,hash]=href.split('#');
+   const local=resolve(p,'..',target);
    assert.ok(local.startsWith(join(root,'docs')+'/'));
    await access(local);
+   if(hash)assert.ok((await readFile(local,'utf8')).includes(`id="${hash}"`),`Missing fragment ${href}`);
   }
  }
 });
@@ -35,6 +38,9 @@ test('credits retain every complete notice and provenance record',async()=>{
  for(const source of c.provenance.sources)assert.ok(html.includes(escape(source.source)));
  assert.match(html,/Animated Solar System Proprietary License/);
  assert.match(html,/Permission is hereby granted/);
+ const earth=await readFile(join(root,'docs/earth/index.html'),'utf8');
+ for(const file of ['image-notices.txt','earth-notices.txt','sgp4-license.txt','runtime-license.txt'])assert.ok(earth.includes(escape(await readFile(join(root,'content/earth',file),'utf8'))),file);
+
 });
 test('final website gate fails without claiming phone or store fields are required',()=>{
  assert.throws(()=>execFileSync(process.execPath,['tools/build.mjs','--release'],{cwd:root,stdio:'pipe'}),err=>{
@@ -51,7 +57,31 @@ test('collection uses canonical artwork and accurately labels Earth preview',asy
  const earth=await readFile(join(root,'docs/earth/index.html'),'utf8');
  assert.match(home,/THE COLLECTION \/ 02/);
  assert.match(home,/assets\/animated-solar-system-store-cover.png/);
- assert.match(earth,/live ISS tracking are not implemented/);
+ assert.doesNotMatch(earth,/live ISS tracking are not implemented|EARTH-specific release policies will be prepared/);
+ assert.match(home,/date-based sunlight and Moon phase/);
+ assert.match(earth,/Playback makes no network requests/);
+ assert.match(earth,/SGP4/);
+ assert.match(earth,/seven days/);
+ assert.match(earth,/same projected Sun direction/);
+ for(const slug of ['index','privacy','terms','support']){
+  const page=await readFile(join(root,'docs/earth/'+slug+'.html'),'utf8');
+  assert.match(page,/href="privacy.html"/);assert.match(page,/href="terms.html"/);
+  assert.doesNotMatch(page,/href="(?:\.\.\/)?(?:universe|animated-solar-system)\//);
+ }
+ const privacy=await readFile(join(root,'docs/earth/privacy.html'),'utf8');
+ assert.match(privacy,/GitHub controls its hosting/);
+ assert.match(privacy,/local registry/);
+ assert.match(privacy,/no effective date/);
+ assert.doesNotMatch(privacy,/has not yet confirmed the email service provider/);
+ for(const product of ['earth','animated-solar-system']){
+  const page=await readFile(join(root,'docs',product,'privacy.html'),'utf8');
+  assert.match(page,/Email service provider: Google \(Gmail\)/);
+  for(const url of ['https://policies.google.com/privacy','https://support.google.com/mail/answer/10434152?hl=en','https://policies.google.com/technologies/retention'])assert.ok(page.includes(url));
+  assert.match(page,/does not guarantee immediate removal/);
+  assert.match(page,/only person with access/);
+  assert.match(page,/reasonably necessary/);
+ }
+
  assert.match(earth,/Full image notices/);
  for(const name of ['earth-preview.jpg','earth-cover.png','animated-solar-system-store-cover.png'])assert.deepEqual(await readFile(join(root,'docs/assets',name)),await readFile(join(root,'content/assets',name)));
 });
@@ -64,4 +94,28 @@ test('new product branding has current artwork and working legacy URL redirects'
  assert.doesNotMatch(product,/UNIVERSE|UNIVERSO|UNIVERSUM/);
  const alias=await readFile(join(root,'docs/universe/privacy.html'),'utf8');
  assert.match(alias,/url=\.\.\/animated-solar-system\/privacy\.html/);
+});
+
+test('EARTH policy mode, approval gate, date and contact stay independent of Animated Solar System',async()=>{
+ const temp=await mkdtemp(join(tmpdir(),'earth-site-'));
+ try{
+  for(const dir of ['tools','content'])await cp(join(root,dir),join(temp,dir),{recursive:true});
+  const path=join(temp,'content/earth/publication.json');
+  const c=JSON.parse(await readFile(path,'utf8'));
+  c.publisherName='EARTH Test Publisher';c.supportEmail='earth-test@example.test';
+  c.effectiveDate='2026-10-24';c.support.providerName='Test mail';c.support.privacyUrl='https://example.test/privacy';
+  c.website.mode='final';c.website.policyApproval='Isolated test approval';
+  for(const key of Object.keys(c.reviews))c.reviews[key]=true;
+  await writeFile(path,JSON.stringify(c));
+  execFileSync(process.execPath,['tools/build.mjs'],{cwd:temp});
+  const earth=await readFile(join(temp,'docs/earth/privacy.html'),'utf8');
+  const overview=await readFile(join(temp,'docs/earth/index.html'),'utf8');
+  const universe=await readFile(join(temp,'docs/animated-solar-system/privacy.html'),'utf8');
+  assert.match(earth,/Effective: 2026-10-24/);assert.doesNotMatch(earth,/Public review draft/);
+  assert.match(earth,/EARTH Test Publisher/);assert.match(earth,/mailto:earth-test@example.test/);
+  assert.doesNotMatch(overview,/mailto:thomas/);
+  assert.match(universe,/Public review draft/);assert.doesNotMatch(universe,/earth-test@example.test/);
+  c.website.mode='unknown';await writeFile(path,JSON.stringify(c));
+  assert.throws(()=>execFileSync(process.execPath,['tools/build.mjs'],{cwd:temp,stdio:'pipe'}),e=>/Unknown EARTH website mode/.test(e.stderr.toString()));
+ }finally{await rm(temp,{recursive:true,force:true});}
 });
