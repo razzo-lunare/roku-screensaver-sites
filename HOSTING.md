@@ -121,3 +121,33 @@ https://razzo-lunare.github.io/roku-screensaver-sites/animated-solar-system/
 Review-draft status and final-policy gates remain active. This deployment does
 not change Roku Dashboard listings or install a TV package. Existing EARTH
 copy, source/license notices and Gmail privacy/retention disclosures are preserved.
+
+## Animated Stars deployment — November 19, 2026
+
+Commit `c3d57b3af4457f38b1f958b66e53a9eca8868d16` adds independent
+Animated Stars product, privacy, terms, support and complete credits pages.
+The existing [Pages deployment](https://github.com/razzo-lunare/roku-screensaver-sites/actions/runs/44681276017)
+completed successfully. Verified live URLs:
+
+- https://razzo-lunare.github.io/roku-screensaver-sites/animated-stars/
+- https://razzo-lunare.github.io/roku-screensaver-sites/animated-stars/privacy.html
+- https://razzo-lunare.github.io/roku-screensaver-sites/animated-stars/terms.html
+- https://razzo-lunare.github.io/roku-screensaver-sites/animated-stars/support.html
+- https://razzo-lunare.github.io/roku-screensaver-sites/animated-stars/credits.html
+
+All 27 public files (HTML, CSS, images and existing EARTH JSON) were retrieved
+with HTTPS certificate verification and matched generated local files byte for
+byte. The Stars directory URL also returned its exact generated index. The
+live Stars overview rendered in an unauthenticated desktop browser with the
+review banner, artwork and current copy. Narrow-screen visual inspection was
+not performed. All seven automated tests passed, including full notices,
+local links and independent Stars final-policy approval gating.
+
+The current store-copy snapshot includes exactly “Watch the constellation gently
+appear.” Full catalog, image and runtime notices plus reviewed poster bytes
+were compared with the app checkout. No simulator screenshot is published.
+Publisher/support facts reuse the site's confirmed Gmail arrangement; no new
+policy approval, effective date, store availability or Roku certification is
+claimed. The release check remains deliberately blocked. Final publisher
+policy approval and date, asset/name and English-language coverage reviews
+remain unresolved in Stars configuration. No Roku submission was performed.
