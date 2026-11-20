@@ -1,7 +1,7 @@
 # Independent Roku screensaver websites
 
 Public website-only repository for Tom Cocozzello's standalone screensavers.
-Animated Solar System and EARTH have separate product and policy paths.
+Animated Solar System, EARTH and Animated Stars have separate product and policy paths.
 The private Roku application repository and runtime source are not included.
 
 ## Current status
@@ -166,3 +166,22 @@ npm run sync:animated-solar-system -- ../roku-screensavers
 npm run build
 npm test
 ```
+
+## Animated Stars
+
+Canonical fragments, independent review configuration, current English store-copy
+snapshot, complete public notices and source/artwork provenance are in
+`content/animated-stars/`. Builds render five pages under `docs/animated-stars/`
+and add the reviewed 540×405 poster as `assets/animated-stars-cover.png`. The
+poster is promotional artwork, not a screenshot. No simulator captures are used.
+
+The public upload allowlist additionally includes `content/animated-stars/{publication.json,store-copy.json,stars-notices.txt,image-notices.txt,runtime-license.txt,asset-provenance.json,site/*.html}`,
+`content/assets/animated-stars-cover.png`, `docs/animated-stars/*.html` and
+`docs/assets/animated-stars-cover.png`. No application implementation is exported.
+
+Refresh these public snapshots from the private app's `publishing/stars/store-listing.json`,
+`stars-notices.txt`, image `LICENSE.txt`, shared runtime notices and reviewed
+`design/stars` provenance when those sources change. Rebuild and test before
+committing canonical content and generated pages together. The Stars policy
+approval gate is independent of the other products. Effective date and final
+policy approval remain unresolved; publication is a public review draft.

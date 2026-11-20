@@ -25,7 +25,7 @@ permission, external asset download or app deployment is needed to build/tests.
    npm test
    ```
 
-   Expect five passing tests: static allowlist/links/fragments, complete credits,
+   Checks include: static allowlist/links/fragments, complete credits,
    final-policy gate, current EARTH claims/links, independent product configuration.
    `npm run check:release` deliberately fails until final facts and approvals are
    actually recorded. Public review updates keep both products in review mode.
@@ -45,3 +45,9 @@ permission, external asset download or app deployment is needed to build/tests.
 
 No tools were installed or upgraded for the October24 EARTH update. Do not alter
 Pages visibility, domain, deployment settings or policy approval to bypass a check.
+
+Animated Stars follows the same workflow in `content/animated-stars/`. Keep its
+review configuration independent; copying confirmed publisher/support facts
+does not approve its policies. Preserve complete notices and refresh the public
+store-copy/provenance snapshots with app releases. Tests cover Stars policy
+isolation, complete credits, exact current copy and all local links.

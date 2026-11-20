@@ -21,3 +21,10 @@ it is not a screenshot. No additional first-party license is granted here.
 
 EARTH promotional cover is AI-generated illustrative artwork, separate from
 the native screenshot and its NASA source imagery.
+
+Animated Stars full catalog, artwork and shared-runtime notices are preserved in
+`content/animated-stars/` and rendered at `docs/animated-stars/credits.html`.
+The promotional cover is OpenAI-generated illustrative artwork, not a runtime
+screenshot. Its provenance records OpenAI's assignment of rights, if any,
+without claiming exclusive copyright. Public-domain catalog data and MIT
+software retain their respective permissions; no blanket license is added.

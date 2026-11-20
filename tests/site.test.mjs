@@ -9,8 +9,8 @@ execFileSync(process.execPath,['tools/build.mjs'],{cwd:root});
 test('only static pages and stylesheet enter the Pages webroot; all local links resolve',async()=>{
  const files=async p=>(await Promise.all((await readdir(p,{withFileTypes:true})).map(async d=>d.isDirectory()?files(join(p,d.name)):[join(p,d.name)]))).flat();
  const paths=await files(join(root,'docs'));
- assert.equal(paths.length,22);
- const assets=['assets/earth-cover.png','assets/animated-solar-system-store-cover.png','assets/earth-preview.jpg','earth/asset-provenance.json','earth/iss-orbit.json'];
+ assert.equal(paths.length,28);
+ const assets=['assets/animated-stars-cover.png','assets/earth-cover.png','assets/animated-solar-system-store-cover.png','assets/earth-preview.jpg','earth/asset-provenance.json','earth/iss-orbit.json'];
  for(const p of paths){
   assert.ok(/\.(?:html|css)$|\.nojekyll$/.test(p)||assets.some(a=>p===join(root,'docs',a)));
   if(!p.endsWith('.html'))continue;
@@ -55,7 +55,7 @@ test('final website gate fails without claiming phone or store fields are requir
 test('collection uses canonical artwork and accurately labels Earth preview',async()=>{
  const home=await readFile(join(root,'docs/index.html'),'utf8');
  const earth=await readFile(join(root,'docs/earth/index.html'),'utf8');
- assert.match(home,/THE COLLECTION \/ 02/);
+ assert.match(home,/THE COLLECTION \/ 03/);
  assert.match(home,/assets\/animated-solar-system-store-cover.png/);
  assert.doesNotMatch(earth,/live ISS tracking are not implemented|EARTH-specific release policies will be prepared/);
  assert.match(home,/date-based sunlight and Moon phase/);
@@ -117,5 +117,36 @@ test('EARTH policy mode, approval gate, date and contact stay independent of Ani
   assert.match(universe,/Public review draft/);assert.doesNotMatch(universe,/earth-test@example.test/);
   c.website.mode='unknown';await writeFile(path,JSON.stringify(c));
   assert.throws(()=>execFileSync(process.execPath,['tools/build.mjs'],{cwd:temp,stdio:'pipe'}),e=>/Unknown EARTH website mode/.test(e.stderr.toString()));
+ }finally{await rm(temp,{recursive:true,force:true});}
+});
+
+test('Animated Stars preserves current copy, complete notices and independent final-policy gate',async()=>{
+ const escape=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const overview=await readFile(join(root,'docs/animated-stars/index.html'),'utf8');
+ const copy=JSON.parse(await readFile(join(root,'content/animated-stars/store-copy.json'),'utf8'));
+ assert.ok(overview.includes(escape(copy.longDescription)));
+ assert.match(overview,/Watch the constellation gently appear\./);
+ assert.match(overview,/promotional artwork · not an app screenshot/);
+ const credits=await readFile(join(root,'docs/animated-stars/credits.html'),'utf8');
+ for(const file of ['stars-notices.txt','image-notices.txt','runtime-license.txt','asset-provenance.json'])assert.ok(credits.includes(escape(await readFile(join(root,'content/animated-stars',file),'utf8'))),file);
+ for(const slug of ['index','privacy','terms','support','credits']){
+  const page=await readFile(join(root,'docs/animated-stars',slug+'.html'),'utf8');
+  assert.doesNotMatch(page,/href="(?:\.\.\/)?(?:earth|universe|animated-solar-system)\//);
+  assert.doesNotMatch(page,/confirmation required|Phone:/);
+ }
+ const temp=await mkdtemp(join(tmpdir(),'stars-site-'));
+ try{
+  for(const dir of ['tools','content'])await cp(join(root,dir),join(temp,dir),{recursive:true});
+  const path=join(temp,'content/animated-stars/publication.json');
+  const config=JSON.parse(await readFile(path,'utf8'));config.website.mode='final';
+  await writeFile(path,JSON.stringify(config));
+  assert.throws(()=>execFileSync(process.execPath,['tools/build.mjs'],{cwd:temp,stdio:'pipe'}),e=>/Final website blocked: Animated Stars.*publisher policy approval/.test(e.stderr.toString()));
+  config.publisherName='Stars Test Publisher';config.supportEmail='stars-test@example.test';config.effectiveDate='2026-11-19';config.website.policyApproval='Isolated test approval';
+  for(const key of Object.keys(config.reviews))config.reviews[key]=true;
+  await writeFile(path,JSON.stringify(config));
+  execFileSync(process.execPath,['tools/build.mjs'],{cwd:temp});
+  const stars=await readFile(join(temp,'docs/animated-stars/privacy.html'),'utf8');
+  assert.match(stars,/Effective: 2026-11-19/);assert.match(stars,/Stars Test Publisher/);assert.match(stars,/stars-test@example.test/);assert.doesNotMatch(stars,/Public review draft/);
+  const earth=await readFile(join(temp,'docs/earth/privacy.html'),'utf8');assert.match(earth,/Public review draft/);assert.doesNotMatch(earth,/stars-test@example.test/);
  }finally{await rm(temp,{recursive:true,force:true});}
 });

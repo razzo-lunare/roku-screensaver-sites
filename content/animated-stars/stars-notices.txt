@@ -1,0 +1,20 @@
+Star positions and brightness
+ESA Hipparcos mission. Hipparcos New Reduction by Floor van Leeuwen (2007), CDS I/311. Public domain.
+
+Artwork
+Landscapes and constellation figures created for Animated Stars. The terrain foregrounds and menu cover were generated with OpenAI ImageGen from written briefs.
+The shooting-star trail reuses original Animated Aurora artwork.
+The constellation stroke is original artwork drawn by the Animated Stars background generator.
+The aurora curtains reuse original Animated Aurora artwork and motion.
+
+About this sky
+2,486 catalog stars and 30 constellation figures in an imagined rotating sky.
+This is not a current view from your location or an observing guide. Catalog
+directions use epoch J1991.25; the app does not apply current proper motion.
+Constellation connectors are original illustrations, not IAU boundaries.
+Aurora and shooting stars are decorative effects, not forecasts or observations.
+
+Privacy
+Playback makes no network requests and has no accounts, ads, analytics, or
+location access. Preferences stay in the Roku registry. The clock uses the
+device's local time. Roku's platform services are governed by Roku's policies.
